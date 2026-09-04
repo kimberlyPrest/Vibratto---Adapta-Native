@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "adapta-cliente-handoff/v1",
+  "phase": 1,
+  "versions": {
+    "package": "0.9.3",
+    "adapta": "0.9.3",
+    "adaptaCliente": "0.9.3"
+  },
+  "generatedAt": "2026-09-04T19:08:25.638Z",
+  "files": [
+    {
+      "path": "04_fase-atual/fase.md",
+      "sha256": "e1d725e41ae3391ed8568db0f4bc81c4e120491b691cdc370cbd2f566dca61fe",
+      "classification": "fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-001-acesso-sessao-e-perfis-operacionais.md",
+      "sha256": "d3284d426e1e684609dfc84584a170dd925b8a5afd6807d8fee4064dffa52090",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-002-modo-demonstracao-credenciais-de-teste-e-gate-g4.md",
+      "sha256": "994ea4d0662174da3fba520305870092c2bdea27c59b357193fdfb7688b869f4",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-003-contatos-e-empresas.md",
+      "sha256": "80b1e5e57252143ff57f3d4d803992ac7b9c47aa0f0afd2ef7ece50f5b9656e2",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-004-oportunidades-e-campos-comerciais.md",
+      "sha256": "8f159fabc4109758d6ead4fc06070fc95775d8140522b26a5f7a2f73c62d138a",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-005-ganho-perda-e-reabertura.md",
+      "sha256": "7a0d723fafb01643dab9c9fee9d362b95147cbaa5e50932908e3113d873f1e9b",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-006-seed-e-editor-administrativo-de-etapas.md",
+      "sha256": "7f8e13edfcf18d58d0d8e25bc0c9bdd61d6555f3951204dcfc9c89555ced025d",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-007-kanban-e-movimentacao-acessivel.md",
+      "sha256": "acfc5e3ffd422380365ca9427b321e183cf501467d877801caabc22a545ca85a",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-008-protecao-de-etapa-em-uso-e-migracao-atomica.md",
+      "sha256": "f3fa7791e69d962744de12ae07c9d671220e5eb2d4e6b508e523a99381723dc7",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-009-contadores-tempo-por-etapa-e-filas-operacionais.md",
+      "sha256": "47406767e65df4a20a80a6339c925ad31e8d887843ba09bb327b67945351e641",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-010-trilha-de-auditoria-append-only.md",
+      "sha256": "7284cd91e4fbf7fca668169ac9bbabf27fc556ed536557980ffa2ec3b28bb237",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-011-busca-filtros-e-recuperacao-operacional.md",
+      "sha256": "1eb053b002c5d563c4a8086c350f2d6fa339c4898a7796e8a9faf07d7c53e3c0",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-012-exportacao-segura-e-aceite-integrado.md",
+      "sha256": "d9e1cb510beb4cc2203597d3e5ba1d2abc8f9a8e1e6ed3aca54cc05c61263e9d",
+      "classification": "spec-fase-atual"
+    }
+  ]
+}
