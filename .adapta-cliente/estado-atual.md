@@ -3,11 +3,11 @@
 - task_id: T1.2
 - champion: Verificador da entrega
 - spec: 04_fase-atual/specs/SPEC-1-001-acesso-sessao-e-perfis-operacionais.md
-- etapa: aguardando_teste_humano
+- etapa: concluida
 - autorizacao_implementacao: confirmada — "sim" em 2026-09-05
-- teste_humano: parcial — cliente confirmou operador redirecionado de `/admin` para `/home` em 2026-09-05; logout, sessão inválida/expirada e ação administrativa sem autorização ainda não confirmados nesta rodada
+- teste_humano: aprovado — cliente confirmou operador redirecionado de `/admin` para `/home` e, após logout, `/home` e `/admin` retornaram à tela de login em 2026-09-05
 - verificacao_automatica: passou — Skip QA v0.0.5; RBAC fail-closed corrigido; rotas sem sessão, login inválido, migrações e regras PocketBase verificadas
-- aprendizado: pendente
-- ultima_acao: revalidação final; bloqueio do operador em `/admin` confirmado pela cliente
-- proxima_acao: executar os cenários humanos restantes da T1.2 antes de concluir
-- atualizado_em: 2026-09-05T05:02:00-03:00
+- aprendizado: sem_sinal: sem padrão reutilizável adicional além dos critérios da SPEC
+- ultima_acao: T1.2 revalidada e concluída com evidência de regressão
+- proxima_acao: aguardar autorização para analisar T2.1
+- atualizado_em: 2026-09-05T05:05:00-03:00
