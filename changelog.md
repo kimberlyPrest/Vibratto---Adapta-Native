@@ -2,6 +2,7 @@
 
 ## 2026-09-08
 
+- 2026-09-08 · Deni.Ai · Task T6.1 concluída: seed idempotente e editor administrativo de etapas implementados, com proteção de etapas em uso, RBAC e integração ao pipeline; QA v0.0.34 verde e teste humano aprovado. SPEC-1-006 permanece identificada como derivada. Evidência em `evidencias/spec-1-006/t6.1-green.md`.
 - 2026-09-08 · Deni.Ai · Task T4.2 concluída: regressão de oportunidades validou campos obrigatórios, limites de valor/probabilidade, reversão de edição/cadastro, proteção de rota e RBAC de exclusão; QA v0.0.31 verde e teste humano aprovado. Evidência em `evidencias/spec-1-004/t4.2-regressao.md`.
 - 2026-09-08 · Deni.Ai · Task T4.1 concluída: caminho principal de oportunidades implementado com rota protegida, listagem, busca, criação, edição e validações de campos comerciais; QA v0.0.28 verde e teste humano aprovado. Evidência em `evidencias/spec-1-004/t4.1-green.md`.
 - 2026-09-08 · Deni.Ai · Task T3.2 concluída: regressão de contatos/clientes validou nome obrigatório, prevenção de duplicidade, validação de e-mail, tratamento seguro de observação, arquivamento/restauração, RBAC de exclusão e proteção de rota; QA v0.0.24 verde e teste humano aprovado. Evidência em `evidencias/spec-1-003/t3.2-regressao.md`.
