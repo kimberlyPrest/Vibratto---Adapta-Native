@@ -2,6 +2,7 @@
 
 ## 2026-09-08
 
+- 2026-09-08 · Deni.Ai · Task T4.1 concluída: caminho principal de oportunidades implementado com rota protegida, listagem, busca, criação, edição e validações de campos comerciais; QA v0.0.28 verde e teste humano aprovado. Evidência em `evidencias/spec-1-004/t4.1-green.md`.
 - 2026-09-08 · Deni.Ai · Task T3.2 concluída: regressão de contatos/clientes validou nome obrigatório, prevenção de duplicidade, validação de e-mail, tratamento seguro de observação, arquivamento/restauração, RBAC de exclusão e proteção de rota; QA v0.0.24 verde e teste humano aprovado. Evidência em `evidencias/spec-1-003/t3.2-regressao.md`.
 - 2026-09-08 · Deni.Ai · Task T3.1 concluída: CRUD de contatos/clientes, validação, alerta de duplicidade, arquivamento e restauração implementados; QA v0.0.23 verde e teste humano aprovado. Evidência em `evidencias/spec-1-003/t3.1-green.md`.
 - 2026-09-08 · Deni.Ai · Task T2.2 concluída: regressão do modo demonstração, gate G4, fixtures e auditoria validada; endpoint admin-only HTTP 200, auditoria persistida e QA verde. Evidência em `evidencias/spec-1-002/t2.2-regressao.md`.
