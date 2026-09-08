@@ -17,7 +17,7 @@ Integrações externas, qualificação avançada, proposta, SLA, dashboard execu
 - **SPEC-1-002:** Modo demonstração, credenciais de teste e gate G4.
 - **SPEC-1-003:** Contatos e empresas.
 - **SPEC-1-004:** Oportunidades e campos comerciais.
-- **SPEC-1-005:** Ganho, perda e reabertura.
+- **SPEC-005:** Ganho, perda e reabertura.
 - **SPEC-1-006:** Seed e editor administrativo de etapas.
 - **SPEC-1-007:** Kanban e movimentação acessível.
 - **SPEC-1-008:** Proteção de etapa em uso e migração atômica.
@@ -55,7 +55,7 @@ Admin acessa → confirma modo demo → configura etapas → cadastra contato/em
 | 7 | T10.1 | Implementar e demonstrar o caminho principal — Trilha de auditoria append-only | Executor de software/dados | SPEC-1-010 | Caminho principal e critérios funcionais da SPEC-1-010 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-010/t10.1-green.md | T1.2 concluída | ✅ Concluída — 2026-09-08 |
 | 8 | T10.2 | Validar bordas, segurança, reversão e evidências | Verificador da entrega | SPEC-1-010 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-010/t10.2-regressao.md | T10.1 concluída | ✅ Concluída — 2026-09-08 |
 | 13 | T11.1 | Implementar e demonstrar o caminho principal — Busca, filtros e recuperação operacional | Executor de software/dados | SPEC-1-011 | Caminho principal e critérios funcionais da SPEC-1-011 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-011/t11.1-green.md | T3.2, T4.2 e T9.2 concluídas | ✅ Concluída — 2026-09-08 |
-| 14 | T11.2 | Validar bordas, segurança, reversão e evidências — Busca, filtros e recuperação operacional | Verificador da entrega | SPEC-1-011 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-011/t11.2-regressao.md | T11.1 concluída | ☐ Planejada |
+| 14 | T11.2 | Validar bordas, segurança, reversão e evidências — Busca, filtros e recuperação operacional | Verificador da entrega | SPEC-1-011 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-011/t11.2-regressao.md | T11.1 concluída | ✅ Concluída — 2026-09-08 |
 | 15 | T12.1 | Implementar e demonstrar o caminho principal — Exportação segura e aceite integrado | Executor de software/dados | SPEC-1-012 | Caminho principal e critérios funcionais da SPEC-1-012 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-012/t12.1-green.md | T5.2, T8.2, T9.2, T10.2 e T11.2 concluídas | ☐ Planejada |
 | 16 | T12.2 | Validar bordas, segurança, reversão e evidências | Verificador da entrega | SPEC-1-012 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + testes | evidencias/spec-1-012/t12.2-regressao.md | T12.1 concluída | ☐ Planejada |
 
