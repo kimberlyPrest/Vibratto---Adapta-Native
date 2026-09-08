@@ -3,11 +3,11 @@
 - task_id: T3.2
 - champion: Verificador da entrega
 - spec: 04_fase-atual/specs/SPEC-1-003-contatos-e-empresas.md
-- etapa: aguardando_autorizacao
-- autorizacao_implementacao: ausente
+- etapa: aguardando_teste_humano
+- autorizacao_implementacao: confirmada — "sim" em 2026-09-08
 - teste_humano: pendente
-- verificacao_automatica: pendente — análise da T3.2 concluída; nenhuma alteração de produto feita
+- verificacao_automatica: passou — Skip QA v0.0.24; setup, análise estática, build, integrações e testes OK; regras da coleção clientes verificadas
 - aprendizado: pendente
-- ultima_acao: análise da T3.2 sobre T3.1, coleção clientes e regras PocketBase
-- proxima_acao: aguardar autorização para implementar a regressão T3.2
-- atualizado_em: 2026-09-08T18:55:00-03:00
+- ultima_acao: regressão técnica executada; rotas sem sessão protegidas e regras PocketBase confirmadas
+- proxima_acao: executar roteiro humano das bordas da T3.2
+- atualizado_em: 2026-09-08T19:00:00-03:00
