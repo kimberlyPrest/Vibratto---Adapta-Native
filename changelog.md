@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-09-08
+
+- 2026-09-08 · Deni.Ai · Task T2.2 concluída: regressão do modo demonstração, gate G4, fixtures e auditoria validada; endpoint admin-only HTTP 200, auditoria persistida e QA verde. Evidência em `evidencias/spec-1-002/t2.2-regressao.md`.
+
 ## 2026-09-05
 
 - 2026-09-05 · Deni.Ai · Task T2.1 concluída: modo demonstração visível e indicador do gate G4 implementados no CRM_VIBRATTO; QA v0.0.6 verde e teste humano aprovado. Evidência em `evidencias/spec-1-002/t2.1-green.md`.
