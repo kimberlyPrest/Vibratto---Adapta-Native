@@ -24,7 +24,7 @@ Integrações externas, qualificação avançada, proposta, SLA, dashboard execu
 - **SPEC-1-009:** Contadores, tempo por etapa e filas operacionais.
 - **SPEC-1-010:** Trilha de auditoria append-only.
 - **SPEC-1-011:** Busca, filtros e recuperação operacional.
-- **SPEC-1-012:** Exportação e aceite integrado.
+- **SPEC-1-012:** Exportação segura e aceite integrado.
 
 ## Demonstração integrada
 
@@ -46,7 +46,7 @@ Admin acessa → confirma modo demo → configura etapas → cadastra contato/em
 | 12 | T5.2 | Validar bordas, segurança, reversão e evidências | Verificador da entrega | SPEC-1-005 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-005/t5.2-regressao.md | T5.1 concluída | ☐ Planejada |
 | 5 | T6.1 | Implementar e demonstrar o caminho principal — Seed e editor administrativo de etapas | Executor de software/dados | SPEC-1-006 | Caminho principal e critérios funcionais da SPEC-1-006 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-006/t6.1-green.md | T1.2 concluída | ✅ Concluída — 2026-09-08 |
 | 6 | T6.2 | Validar bordas, segurança, reversão e evidências — Seed e editor administrativo de etapas | Verificador da entrega | SPEC-1-006 | Erros, limites, rollback e índice de evidências da SPEC-1-006 passam | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-006/t6.2-regressao.md | T6.1 concluída | ✅ Concluída — 2026-09-08 |
-| 9 | T7.1 | Implementar e demonstrar o caminho principal — Kanban e movimentação acessível | Executor de software/dados | SPEC-1-007 | Caminho principal e critérios funcionais da SPEC-1-007 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-007/t7.1-green.md | T4.2 e T6.2 concluídas | ☐ Planejada |
+| 9 | T7.1 | Implementar e demonstrar o caminho principal — Kanban e movimentação acessível | Executor de software/dados | SPEC-1-007 | Caminho principal e critérios funcionais da SPEC-1-007 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-007/t7.1-green.md | T4.2 e T6.2 concluídas | ✅ Concluída — 2026-09-08 |
 | 10 | T7.2 | Validar bordas, segurança, reversão e evidências | Verificador da entrega | SPEC-1-007 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-007/t7.2-regressao.md | T7.1 concluída | ☐ Planejada |
 | 13 | T8.1 | Implementar e demonstrar o caminho principal — Proteção de etapa em uso e migração atômica | Executor de software/dados | SPEC-1-008 | Caminho principal e critérios funcionais da SPEC-1-008 passam | GREEN — critérios principais da SPEC | evidencias/spec-1-008/t8.1-green.md | T6.2, T7.2 e T10.2 concluídas | ☐ Planejada |
 | 14 | T8.2 | Validar bordas, segurança, reversão e evidências | Verificador da entrega | SPEC-1-008 | Erros, limites, rollback e índice de evidências | REFACTOR/REGRESSÃO + checklist completo | evidencias/spec-1-008/t8.2-regressao.md | T8.1 concluída | ☐ Planejada |
