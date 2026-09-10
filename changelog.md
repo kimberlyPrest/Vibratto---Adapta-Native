@@ -2,6 +2,15 @@
 
 ## 2026-09-10
 
+- Fase 1 encerrada com ressalvas controladas e arquivada atomicamente em `05_entregas/fase-1/`.
+- Fontes concorrentes `04-fase-atual/` e `04_fase-atual/` reconciliadas; a pasta com hífen foi removida.
+- Fase 2 liberada com 8 SPECs, 40 CAs e 40 tasks em sequência verificável.
+- SPEC-2-000 adicionada como remediação obrigatória antes do fluxo novo: campos comerciais, Empresa, CSV injection, auditoria de exportação/delete, endpoint server-side, portabilidade, RBAC/retenção e seeds.
+- Painel final aprovou contrato, TDD, segurança e tasks sem bloqueadores graves.
+- Produção e dados reais continuam bloqueados até a remediação e o gate G4.
+
+## 2026-09-10
+
 - 2026-09-10 · Deni.Ai · Sincronização do repositório de governança: evidências das tasks T5.1/T5.2, T8.1/T8.2, T9.1/T9.2 e T12.1/T12.2 adicionadas; STATUS.md e fase.md atualizados para 24/24 (100%). O código-fonte das entregas vive no projeto Skip (CRM_VIBRATTO, id 53851, versão 0.0.84); este repositório carrega a governança e as evidências.
 
 ## 2026-09-09
