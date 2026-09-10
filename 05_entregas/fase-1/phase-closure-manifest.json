@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "adapta-phase-closure/v1",
+  "phase": 1,
+  "closedAt": "2026-09-10T16:29:13.839Z",
+  "activeDigest": "f0a7a0cafb4651c49f0375c2d3d58414c33fa11e39822e476586a7b176a5e71e",
+  "files": [
+    {
+      "relative": "fase.md",
+      "sha256": "0cc3a71386e56ccc21cce812b8cd8275564f65cd5bcac71bf59a4cc17f4c7ab8"
+    },
+    {
+      "relative": "specs/SPEC-1-001-acesso-sessao-e-perfis-operacionais.md",
+      "sha256": "7266d41769d5f0d009d9ad92f249780c2fba9b2f2e3e4fc35fdb528ace1bfca7"
+    },
+    {
+      "relative": "specs/SPEC-1-002-modo-demonstracao-credenciais-de-teste-e-gate-g4.md",
+      "sha256": "fb921a832883987556bc336e872cda31243ae8dcc9266c21637a51c8ae40f218"
+    },
+    {
+      "relative": "specs/SPEC-1-003-contatos-e-empresas.md",
+      "sha256": "e3adba4e05e0be6d371304e3512ca06abb81fab74358116a6a7d595f6cbac10e"
+    },
+    {
+      "relative": "specs/SPEC-1-004-oportunidades-e-campos-comerciais.md",
+      "sha256": "5f44d0a81ca2395221f6b9cfa18d04cb8cd6a96760bfa68114f0ca4f4f250bf7"
+    },
+    {
+      "relative": "specs/SPEC-1-005-ganho-perda-e-reabertura.md",
+      "sha256": "8aeab6ddc1afbd7d9f05964d9641bb9fca9a982d7cb6c9ad1463c9ed73d0f57c"
+    },
+    {
+      "relative": "specs/SPEC-1-006-seed-e-editor-administrativo-de-etapas.md",
+      "sha256": "f3aa82718b2a65ee5cf2dd6caf74a2c0635017ba330bb819ab7fdc5cf8497908"
+    },
+    {
+      "relative": "specs/SPEC-1-007-kanban-e-movimentacao-acessivel.md",
+      "sha256": "7d3d353e936a1a710e7f9ccd823a433980e15c6a8b62fb630c11d1c9b9161451"
+    },
+    {
+      "relative": "specs/SPEC-1-008-protecao-de-etapa-em-uso-e-migracao-atomica.md",
+      "sha256": "48d35ec01383d701c714d0fd47a016f44b5a89bae649c7f996caa701be363ee4"
+    },
+    {
+      "relative": "specs/SPEC-1-009-contadores-tempo-por-etapa-e-filas-operacionais.md",
+      "sha256": "0e7dabbdfd394a1c5a4eb615a4b0beb116ddf4e2562318735bd76c4c3f6df053"
+    },
+    {
+      "relative": "specs/SPEC-1-010-trilha-de-auditoria-append-only.md",
+      "sha256": "09d0500280264349b42c89c194934a9af3f23bc35fa2e6b404032418c33396fd"
+    },
+    {
+      "relative": "specs/SPEC-1-011-busca-filtros-e-recuperacao-operacional.md",
+      "sha256": "24c3e48472d004f861d7f966e0894f9fb49975733458948a67f85ddd2a50c0d6"
+    },
+    {
+      "relative": "specs/SPEC-1-012-exportacao-segura-e-aceite-integrado.md",
+      "sha256": "8350f55208641cac456e8631d3742a0b8d6c3ef8c19b2eb9968cd4985a1aa677"
+    }
+  ],
+  "checkSha256": "d6535fb6eafd42340bae6d2fc705374cfcb5aae08f6951c9def3f73944362990",
+  "manifestDrift": [
+    {
+      "path": "04_fase-atual/fase.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "e1d725e41ae3391ed8568db0f4bc81c4e120491b691cdc370cbd2f566dca61fe",
+      "currentSha256": "0cc3a71386e56ccc21cce812b8cd8275564f65cd5bcac71bf59a4cc17f4c7ab8"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-001-acesso-sessao-e-perfis-operacionais.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "d3284d426e1e684609dfc84584a170dd925b8a5afd6807d8fee4064dffa52090",
+      "currentSha256": "7266d41769d5f0d009d9ad92f249780c2fba9b2f2e3e4fc35fdb528ace1bfca7"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-002-modo-demonstracao-credenciais-de-teste-e-gate-g4.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "994ea4d0662174da3fba520305870092c2bdea27c59b357193fdfb7688b869f4",
+      "currentSha256": "fb921a832883987556bc336e872cda31243ae8dcc9266c21637a51c8ae40f218"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-003-contatos-e-empresas.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "80b1e5e57252143ff57f3d4d803992ac7b9c47aa0f0afd2ef7ece50f5b9656e2",
+      "currentSha256": "e3adba4e05e0be6d371304e3512ca06abb81fab74358116a6a7d595f6cbac10e"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-004-oportunidades-e-campos-comerciais.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "8f159fabc4109758d6ead4fc06070fc95775d8140522b26a5f7a2f73c62d138a",
+      "currentSha256": "5f44d0a81ca2395221f6b9cfa18d04cb8cd6a96760bfa68114f0ca4f4f250bf7"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-005-ganho-perda-e-reabertura.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "7a0d723fafb01643dab9c9fee9d362b95147cbaa5e50932908e3113d873f1e9b",
+      "currentSha256": "8aeab6ddc1afbd7d9f05964d9641bb9fca9a982d7cb6c9ad1463c9ed73d0f57c"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-006-seed-e-editor-administrativo-de-etapas.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "7f8e13edfcf18d58d0d8e25bc0c9bdd61d6555f3951204dcfc9c89555ced025d",
+      "currentSha256": "f3aa82718b2a65ee5cf2dd6caf74a2c0635017ba330bb819ab7fdc5cf8497908"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-007-kanban-e-movimentacao-acessivel.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "acfc5e3ffd422380365ca9427b321e183cf501467d877801caabc22a545ca85a",
+      "currentSha256": "7d3d353e936a1a710e7f9ccd823a433980e15c6a8b62fb630c11d1c9b9161451"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-008-protecao-de-etapa-em-uso-e-migracao-atomica.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "f3fa7791e69d962744de12ae07c9d671220e5eb2d4e6b508e523a99381723dc7",
+      "currentSha256": "48d35ec01383d701c714d0fd47a016f44b5a89bae649c7f996caa701be363ee4"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-009-contadores-tempo-por-etapa-e-filas-operacionais.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "47406767e65df4a20a80a6339c925ad31e8d887843ba09bb327b67945351e641",
+      "currentSha256": "0e7dabbdfd394a1c5a4eb615a4b0beb116ddf4e2562318735bd76c4c3f6df053"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-010-trilha-de-auditoria-append-only.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "7284cd91e4fbf7fca668169ac9bbabf27fc556ed536557980ffa2ec3b28bb237",
+      "currentSha256": "09d0500280264349b42c89c194934a9af3f23bc35fa2e6b404032418c33396fd"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-011-busca-filtros-e-recuperacao-operacional.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "1eb053b002c5d563c4a8086c350f2d6fa339c4898a7796e8a9faf07d7c53e3c0",
+      "currentSha256": "24c3e48472d004f861d7f966e0894f9fb49975733458948a67f85ddd2a50c0d6"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-1-012-exportacao-segura-e-aceite-integrado.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "d9e1cb510beb4cc2203597d3e5ba1d2abc8f9a8e1e6ed3aca54cc05c61263e9d",
+      "currentSha256": "8350f55208641cac456e8631d3742a0b8d6c3ef8c19b2eb9968cd4985a1aa677"
+    }
+  ]
+}
