@@ -1,0 +1,861 @@
+{
+  "generatedAt": "2026-09-09T19:03:04.032Z",
+  "collections": [
+    {
+      "name": "users",
+      "type": "auth",
+      "apiRules": {
+        "list": "id = @request.auth.id",
+        "view": "id = @request.auth.id",
+        "create": "",
+        "update": "id = @request.auth.id",
+        "delete": "id = @request.auth.id"
+      },
+      "fields": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "avatar",
+          "type": "file",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        },
+        {
+          "name": "role",
+          "type": "select",
+          "required": false,
+          "system": false,
+          "selectValues": ["admin", "operator"]
+        },
+        {
+          "name": "active",
+          "type": "bool",
+          "required": false,
+          "system": false
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX `idx_tokenKey__pb_users_auth_` ON `users` (`tokenKey`)",
+        "CREATE UNIQUE INDEX `idx_email__pb_users_auth_` ON `users` (`email`) WHERE `email` != ''"
+      ]
+    },
+    {
+      "name": "clientes",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "@request.auth.id != ''",
+        "update": "@request.auth.id != ''",
+        "delete": "@request.auth.id != '' && @request.auth.role = 'admin'"
+      },
+      "fields": [
+        {
+          "name": "nome",
+          "type": "text",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "empresa",
+          "type": "text",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "email",
+          "type": "email",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "telefone",
+          "type": "text",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "cidade",
+          "type": "text",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "origem",
+          "type": "select",
+          "required": false,
+          "system": false,
+          "selectValues": ["site", "indicacao", "redes_sociais", "evento", "outro"]
+        },
+        {
+          "name": "observacoes",
+          "type": "text",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "status",
+          "type": "select",
+          "required": false,
+          "system": false,
+          "selectValues": ["ativo", "inativo", "prospect"]
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_clientes_nome ON clientes (nome)",
+        "CREATE INDEX idx_clientes_email ON clientes (email)"
+      ]
+    },
+    {
+      "name": "negocios",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "@request.auth.id != ''",
+        "update": "@request.auth.id != ''",
+        "delete": "@request.auth.id != '' && @request.auth.role = 'admin'"
+      },
+      "fields": [
+        {
+          "name": "titulo",
+          "type": "text",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "cliente",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "clientes",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "valor",
+          "type": "number",
+          "required": false,
+          "system": false,
+          "min": 0
+        },
+        {
+          "name": "estagio",
+          "type": "select",
+          "required": false,
+          "system": false,
+          "selectValues": ["novo", "contato_feito", "proposta", "fechado_ganho", "fechado_perdido"]
+        },
+        {
+          "name": "probabilidade",
+          "type": "number",
+          "required": false,
+          "system": false,
+          "min": 0,
+          "max": 100
+        },
+        {
+          "name": "data_fechamento_previsto",
+          "type": "date",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "observacoes",
+          "type": "text",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "criado_por",
+          "type": "relation",
+          "required": false,
+          "system": false,
+          "collectionName": "users",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "motivo_perda",
+          "type": "select",
+          "required": false,
+          "system": false,
+          "selectValues": ["preco", "concorrencia", "sem_orcamento", "timing", "sem_retorno", "outro"]
+        },
+        {
+          "name": "motivo_perda_detalhe",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 500
+        },
+        {
+          "name": "data_ganho",
+          "type": "date",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "observacao_ganho",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 1000
+        },
+        {
+          "name": "justificativa_reabertura",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 1000
+        },
+        {
+          "name": "proxima_acao_em",
+          "type": "date",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "proxima_acao_descricao",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 500
+        },
+        {
+          "name": "arquivado",
+          "type": "bool",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_negocios_estagio ON negocios (estagio)",
+        "CREATE INDEX idx_negocios_cliente ON negocios (cliente)"
+      ]
+    },
+    {
+      "name": "interacoes",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "@request.auth.id != ''",
+        "update": "@request.auth.id != ''",
+        "delete": "@request.auth.id != '' && @request.auth.role = 'admin'"
+      },
+      "fields": [
+        {
+          "name": "cliente",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "clientes",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "negocio",
+          "type": "relation",
+          "required": false,
+          "system": false,
+          "collectionName": "negocios",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "tipo",
+          "type": "select",
+          "required": true,
+          "system": false,
+          "selectValues": ["ligacao", "email", "reuniao", "whatsapp", "outro"]
+        },
+        {
+          "name": "resumo",
+          "type": "text",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "data",
+          "type": "date",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "registrado_por",
+          "type": "relation",
+          "required": false,
+          "system": false,
+          "collectionName": "users",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_interacoes_cliente ON interacoes (cliente)",
+        "CREATE INDEX idx_interacoes_data ON interacoes (data)"
+      ]
+    },
+    {
+      "name": "etapas_negocio",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "@request.auth.role = 'admin'",
+        "update": "@request.auth.role = 'admin'",
+        "delete": ""
+      },
+      "fields": [
+        {
+          "name": "chave",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 80
+        },
+        {
+          "name": "nome",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 120
+        },
+        {
+          "name": "ordem",
+          "type": "number",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "ativa",
+          "type": "bool",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "sistema",
+          "type": "bool",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "migracao_destino",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 80
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX idx_etapas_negocio_chave ON etapas_negocio (chave)"
+      ]
+    },
+    {
+      "name": "auditoria",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "",
+        "update": "",
+        "delete": ""
+      },
+      "fields": [
+        {
+          "name": "entidade",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 80
+        },
+        {
+          "name": "registro_id",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 80
+        },
+        {
+          "name": "acao",
+          "type": "select",
+          "required": true,
+          "system": false,
+          "selectValues": ["create", "update"]
+        },
+        {
+          "name": "ator_id",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "users",
+          "maxSelect": 1
+        },
+        {
+          "name": "ocorrido_em",
+          "type": "date",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "estado_anterior",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 20000
+        },
+        {
+          "name": "estado_posterior",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 20000
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_auditoria_entidade_registro ON auditoria (entidade, registro_id)",
+        "CREATE INDEX idx_auditoria_ocorrido_em ON auditoria (ocorrido_em)"
+      ]
+    },
+    {
+      "name": "aceites_exportacao",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id = usuario || @request.auth.role = 'admin'",
+        "view": "@request.auth.id = usuario || @request.auth.role = 'admin'",
+        "create": "@request.auth.id != ''",
+        "update": "",
+        "delete": ""
+      },
+      "fields": [
+        {
+          "name": "usuario",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "users",
+          "maxSelect": 1
+        },
+        {
+          "name": "entidade",
+          "type": "select",
+          "required": true,
+          "system": false,
+          "selectValues": ["clientes", "negocios"]
+        },
+        {
+          "name": "filtros",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 2000
+        },
+        {
+          "name": "quantidade",
+          "type": "number",
+          "required": true,
+          "system": false,
+          "min": 0
+        },
+        {
+          "name": "finalidade",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 200
+        },
+        {
+          "name": "aceito_em",
+          "type": "date",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "versao_termo",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 20
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_aceites_exportacao_usuario ON aceites_exportacao (usuario)",
+        "CREATE INDEX idx_aceites_exportacao_data ON aceites_exportacao (aceito_em)"
+      ]
+    },
+    {
+      "name": "permanencias_negocio",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "",
+        "update": "",
+        "delete": ""
+      },
+      "fields": [
+        {
+          "name": "negocio",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "negocios",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "etapa",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 80
+        },
+        {
+          "name": "entrou_em",
+          "type": "date",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "saiu_em",
+          "type": "date",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "duracao_segundos",
+          "type": "number",
+          "required": false,
+          "system": false,
+          "min": 0
+        },
+        {
+          "name": "criado_por",
+          "type": "relation",
+          "required": false,
+          "system": false,
+          "collectionName": "users",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE INDEX idx_perm_negocio ON permanencias_negocio (negocio)",
+        "CREATE INDEX idx_perm_negocio_aberta ON permanencias_negocio (negocio, saiu_em)",
+        "CREATE INDEX idx_perm_etapa ON permanencias_negocio (etapa)"
+      ]
+    },
+    {
+      "name": "configuracoes_operacionais",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "@request.auth.role = 'admin'",
+        "update": "@request.auth.role = 'admin'",
+        "delete": "@request.auth.role = 'admin'"
+      },
+      "fields": [
+        {
+          "name": "chave",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 120
+        },
+        {
+          "name": "valor_numero",
+          "type": "number",
+          "required": false,
+          "system": false,
+          "min": 0
+        },
+        {
+          "name": "descricao",
+          "type": "text",
+          "required": false,
+          "system": false,
+          "max": 500
+        },
+        {
+          "name": "updated_by",
+          "type": "relation",
+          "required": false,
+          "system": false,
+          "collectionName": "users",
+          "cascadeDelete": false,
+          "maxSelect": 1
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX idx_config_operacional_chave ON configuracoes_operacionais (chave)"
+      ]
+    },
+    {
+      "name": "demo_fixtures",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "",
+        "update": "",
+        "delete": ""
+      },
+      "fields": [
+        {
+          "name": "fixture_key",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 100
+        },
+        {
+          "name": "label",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 255
+        },
+        {
+          "name": "status",
+          "type": "select",
+          "required": true,
+          "system": false,
+          "selectValues": ["active", "deactivated"]
+        },
+        {
+          "name": "environment",
+          "type": "select",
+          "required": true,
+          "system": false,
+          "selectValues": ["demo"]
+        },
+        {
+          "name": "deactivated_at",
+          "type": "date",
+          "required": false,
+          "system": false
+        },
+        {
+          "name": "deactivated_by",
+          "type": "relation",
+          "required": false,
+          "system": false,
+          "collectionName": "users",
+          "maxSelect": 1
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ],
+      "indexes": [
+        "CREATE UNIQUE INDEX idx_demo_fixtures_key ON demo_fixtures (fixture_key)"
+      ]
+    },
+    {
+      "name": "fixture_audit",
+      "type": "base",
+      "apiRules": {
+        "list": "@request.auth.id != ''",
+        "view": "@request.auth.id != ''",
+        "create": "",
+        "update": "",
+        "delete": ""
+      },
+      "fields": [
+        {
+          "name": "fixture_id",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "demo_fixtures",
+          "maxSelect": 1
+        },
+        {
+          "name": "action",
+          "type": "select",
+          "required": true,
+          "system": false,
+          "selectValues": ["deactivated"]
+        },
+        {
+          "name": "actor_id",
+          "type": "relation",
+          "required": true,
+          "system": false,
+          "collectionName": "users",
+          "maxSelect": 1
+        },
+        {
+          "name": "occurred_at",
+          "type": "date",
+          "required": true,
+          "system": false
+        },
+        {
+          "name": "reason",
+          "type": "text",
+          "required": true,
+          "system": false,
+          "max": 255
+        },
+        {
+          "name": "created",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate"]
+        },
+        {
+          "name": "updated",
+          "type": "autodate",
+          "required": false,
+          "system": false,
+          "autodateTriggers": ["onCreate", "onUpdate"]
+        }
+      ]
+    }
+  ]
+}
