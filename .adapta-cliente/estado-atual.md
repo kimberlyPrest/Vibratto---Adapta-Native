@@ -9,6 +9,6 @@
 - teste_humano: aprovado — 2026-09-12 10:31, owner: "aprovado" (com print do dashboard: N=2, botão Exportar CSV, drill-down validado)
 - verificacao_automatica: ok — RED 4 + GREEN 7 + neutralização `'=SOMA(1+1)` + regressão 200×3; QA v0.0.357–0.0.361 verde; limpeza 0108 aplicada
 - aprendizado: capturado:06_notas/aprendizado-continuo/AP-2026-09-12-t235-preview-build-development.md
-- ultima_acao: T2.40 CONCLUÍDA — FASE 2 FECHADA (40/40, 8 SPECs)
-- proxima_acao: pendência operacional — commit da governança pós-aprovação no Skip (evidência/changelog/STATUS/estado; MCP Skip indisponível no fechamento, código/QA já commitados até v0.0.361); depois, liberar Fase 3 com a cliente
-- atualizado_em: 2026-09-12T10:31:00-03:00
+- ultima_acao: T2.40 CONCLUÍDA — FASE 2 FECHADA (40/40, 8 SPECs); fase.md sincronizada no GitHub (40/40 marcadas ✅)
+- proxima_acao: liberar Fase 3 (integrações externas, WhatsApp, e-mail, agenda) com a cliente; pendência residual: commit da governança no Skip se o MCP voltar
+- atualizado_em: 2026-09-11T11:40:00-03:00
