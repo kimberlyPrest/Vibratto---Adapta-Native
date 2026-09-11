@@ -1,6 +1,17 @@
 # Changelog — CRM Vibratto
 
-## [0.0.356] — 2026-09-12 — T2.39 CONCLUÍDA (teste humano aprovado)
+## [0.0.361] — 2026-09-12 — T2.40 CONCLUÍDA (teste humano aprovado) — FASE 2 FECHADA (40/40)
+
+### Concluído
+
+- CA-2-035 fechado: drill-down e exportação agregada correspondem aos números exibidos, neutralizam fórmulas e respeitam RBAC/LGPD. Teste humano aprovado pela cliente (2026-09-12 10:31 — "aprovado", com print do dashboard).
+- **Drill-down**: `GET /backend/v1/dashboard/comercial/drilldown?bloco=&chave=` + mesmos filtros do dashboard — registros que compõem o número, recalculados server-side com a MESMA lógica (9 blocos). Payload LGPD: sem e-mail/telefone/contato. UI: linhas clicáveis em Leads por origem, Oportunidades por etapa e Perdas → modal com o N e os registros.
+- **Exportação agregada**: `GET /backend/v1/dashboard/comercial/export` — CSV (BOM UTF-8) das agregações exibidas (bloco;chave;valor;n_denominador), mesmos filtros, neutralização CSV injection (OWASP T2.03), trilha append-only em `exportacoes` (entidade `dashboard_comercial`, migration 0107). Botão "Exportar CSV" no dashboard.
+- Provas: RED 4 (401×2, bloco inválido 400, período invertido 400) + GREEN 7 (todas as contagens do drill-down = N do dashboard; CSV = números do dashboard campo a campo; filtro origem=site consistente) + neutralização `'=SOMA(1+1)` provada + regressão 200×3. Evidência em `evidencias/spec-2-007/ca-2-035-green.md`.
+- Fix durante provas: migration 0107 (`app.save(col)` em vez de `col.save()`) e helpers inline no hook (scoping JSVM). Limpeza: migration 0108 (negócio de prova `=SOMA(1+1)` e aceites de contraste removidos).
+- **FASE 2 FECHADA: 40/40 (100%). 8 SPECs fechadas.** Pendência operacional: commit da governança pós-aprovação no Skip (MCP indisponível no fechamento; código/QA já commitados até v0.0.361).
+
+## [0.0.354] — 2026-09-12 — T2.39 CONCLUÍDA (teste humano aprovado)
 
 ### Concluído
 
