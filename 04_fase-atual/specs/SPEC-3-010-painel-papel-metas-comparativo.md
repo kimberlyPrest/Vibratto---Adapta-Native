@@ -38,7 +38,13 @@ Painel de Direção (CEO) com 12 KPIs organizados em 4 grupos (Aquisição, Pipe
 - **Cards de módulo na home**: "Painel de Direção" (admin) e "Painel Comercial"/"Painel Financeiro" (operator vê comercial; controladoria futura com perfil próprio) — todos no padrão harmonizado.
 - **Administração**: card existente do dashboard comercial mantido.
 
-### 2.4 LGPD e auditoria
+### 2.4 Premissa do MRR (decisão da CEO, 13/09)
+- Contratos de BPO, Tesouraria e Controladoria têm vigência de **12 meses com renovação automática** — o campo `valor` do negócio é a **mensalidade** do contrato anual recorrente.
+- Consequência: MRR = soma do `valor` dos negócios ganhos ativos (não arquivados, não perdidos). Nenhum ajuste one-off é aplicado.
+- O painel exibe a premissa explicitamente: "MRR = mensalidade de contratos de 12 meses renováveis automaticamente (BPO, Tesouraria, Controladoria)".
+- Se no futuro a Vibratto vender projeto one-off, a regra será revisada (task própria) — hoje não existe esse tipo de contrato no modelo.
+
+### 2.5 LGPD e auditoria
 - Endpoint somente leitura, autenticado; nenhum dado pessoal novo é coletado; metas são dados internos de negócio.
 - Auditoria: criação/edição de meta gera evento (padrão existente).
 
@@ -55,7 +61,7 @@ Painel de Direção (CEO) com 12 KPIs organizados em 4 grupos (Aquisição, Pipe
 | CA-3-031 | Comparativo de período é correto para períodos de duração igual | GREEN: período 01–15/09 vs. 16–31/08 (mesma duração) com fixture em ambos → variação correta; período invertido → 400 |
 
 ## 5. Riscos e cuidados
-- **Interpretação do valor**: o CRM usa `valor` único por negócio; MRR assume mensalidade (padrão do funil da Vibratto). Se um cliente tiver implantação one-off, o número inflaria — aviso explícito no painel ("valor interpretado como mensalidade").
+- **Interpretação do valor (RESOLVIDA pela CEO 13/09)**: contratos BPO/Tesouraria/Controladoria = 12 meses renováveis automaticamente; `valor` = mensalidade. MRR = soma direta dos ganhos ativos. Aviso de premissa exibido no painel (não é estimativa — é regra de negócio declarada).
 - Períodos sem dados: variacao_pct null (não 0%) — zero não é dado.
 - Performance: consultas limitadas (20000 registros, padrão dos endpoints existentes).
 - Metas seed são EDITÁVEIS — números da CEO, não inventados pelo agente (documentado na migration).
