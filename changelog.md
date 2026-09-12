@@ -1,5 +1,10 @@
 # Changelog — CRM Vibratto
 
+## [0.0.442] — 2026-09-13 — T3.05 CONCLUÍDA (teste humano delegado aprovado)
+
+- 2026-09-13 · [Deni.Ai] · Task T3.05 concluída: E-mail P1 — registro estruturado de interações e-mail na oportunidade (coleção `interacoes_email` append-only 0145 com campo assunto 3–300, endpoints POST/GET server-side, UI no menu Mais ⌄, bloco E-mail na consulta 360º). Provas RED/GREEN por API (401/404/400/403; 200 POST+GET; 360º com bloco; auditoria 2 eventos; campos comerciais intocados). Limpeza 0146. Teste humano delegado pela CEO e executado no browser real: interação registrada pela UI apareceu na lista e na Consulta 360º (2 interações, assunto e próxima ação visíveis) — prints artifacts/t305_email_modal.png e artifacts/t305_360_email.png. QA verde v0.0.440→0.0.442.
+- Aprendizado: AP-2026-09-13-0850 reaplicado (eval click() para itens de menu).
+
 ## [0.0.441] — 2026-09-13 — T3.05 E-mail P1 implementada (aguardando teste humano)
 
 ### Adicionado (T3.05 — E-mail P1, SPEC-3-004, doc Onda 3 §14)

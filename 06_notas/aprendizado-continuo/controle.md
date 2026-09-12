@@ -1,3 +1,4 @@
 - 2026-09-12T23:45:00-03:00 · task T3.01-pós (canais comunidade/spotify/podcast) · capturado · AP-2026-09-12-0230-canais-atribuicao-direta.md — 3ª confirmação da atribuição direta em select
 - 2026-09-13T08:15:00-03:00 · task T3.03 · capturado · AP-2026-09-13-0810-jsvm-request-url-query.md — query string em hooks JSVM via e.request.url.query().get() (causa raiz confirmada em log)
 - 2026-09-13T08:55:00-03:00 · task T3.04 · capturado · AP-2026-09-13-0850-agent-browser-menu-click.md — clique sintético do agent-browser não dispara handler de item de menu; validar com eval element.click() antes de debugar produto
+- 2026-09-13T09:05:00-03:00 · task T3.05 · sem sinal reutilizável · padrão já coberto por AP-0850 (eval click() aplicado com sucesso no teste delegado)
