@@ -1,10 +1,10 @@
 # Status
 
-**Status:** Fase 3 EM EXECUÇÃO — 4/N tasks concluídas
+**Status:** Fase 3 EM EXECUÇÃO — 5/N tasks concluídas
 **Cliente:** Vibratto Assessoria Empresarial Ltda.
-**Task ativa:** T3.04 — Timeline 360º (aguardando autorização)
-**Última task concluída:** T3.03 — WhatsApp P1 (2026-09-13 08:10, teste humano aprovado — "teste realizado e todos passaram")
-**Próxima leva:** Timeline 360º (SPEC-3-003 publicada) → e-mail → Instagram → agenda → automações → pós-venda → dashboard executivo
+**Task ativa:** T3.05 — E-mail P1 (aguardando autorização)
+**Última task concluída:** T3.04 — Timeline 360º (2026-09-13 08:55, teste humano delegado aprovado com print)
+**Próxima leva:** E-mail P1 (SPEC-3-004 publicada) → Instagram → agenda → automações → pós-venda → dashboard executivo
 **Preview:** https://tela-de-login-crm-a400a--preview.goskip.app
 **Produção:** não publicada (decisão da cliente)
 
@@ -16,16 +16,15 @@
 | 2 | T3.02 — formulários inteligentes | SPEC-3-001 | ✅ Concluída — 2026-09-13 |
 | 2b | T3.02b — ficha de preparação da proposta | SPEC-3-001b | ✅ Concluída — 2026-09-13 00:16 |
 | 3 | T3.03 — WhatsApp P1 (registro estruturado de interações) | SPEC-3-002 | ✅ Concluída — 2026-09-13 08:10 |
-| 4 | T3.04 — Timeline 360º (consolidação cronológica multi-fonte) | SPEC-3-003 | ⏳ Aguardando autorização |
-| 5+ | E-mail, Instagram, agenda, automações, pós-venda, dashboard executivo | a definir SPEC a SPEC | Planejadas |
+| 4 | T3.04 — Timeline 360º (consolidação cronológica multi-fonte) | SPEC-3-003 | ✅ Concluída — 2026-09-13 08:55 |
+| 5 | T3.05 — E-mail P1 (registro estruturado de interações) | SPEC-3-004 | ⏳ Aguardando autorização |
+| 6+ | Instagram, agenda, automações, pós-venda, dashboard executivo | a definir SPEC a SPEC | Planejadas |
 
-## Evidência da T3.03 (concluída)
+## Evidência da T3.04 (concluída)
 
-- **Interações WhatsApp estruturadas**: coleção append-only (delete bloqueado), direção, resultado estruturado, responsável, próxima ação.
-- **Próxima ação automática**: registro com próxima ação futura atualiza a oportunidade (guard T2.18 intacto, campos comerciais intocados).
-- **Consulta 360º**: novo bloco WhatsApp (total, última interação, próxima ação).
-- Provas: RED/GREEN por API (401/404/400/403; 200 POST/GET; 360º com bloco). Caso real: Felicidade Collective. QA verde v0.0.435–0.0.438.
+- **Timeline 360º**: consolidação cronológica server-side de 9 fontes existentes (endpoint somente leitura, sem nova coleção) + UI com badges por tipo.
+- Provas: RED/GREEN por API (401/404; Felicidade 8 eventos de 5 tipos; somente leitura confirmado). Teste delegado: modal aberto com 6 eventos em ordem — print artifacts/t304_timeline_aberto.png. QA verde v0.0.439–0.0.440.
 
 ## Limitações
 
-Sincronização automática via API do WhatsApp Business (webhook/envio) permanece para leva futura — depende de decisão da cliente sobre provedor e da arquitetura dos 5 números departamentais. E-mail, Instagram, agenda, pós-venda, dashboard executivo e IA nas próximas levás. Publicação em produção aguarda decisão da cliente.
+Sincronização automática via API do WhatsApp Business e via IMAP/SMTP de e-mail permanecem para levás futuras — dependem de decisão da cliente sobre provedores. Instagram, agenda, pós-venda, dashboard executivo e IA nas próximas levás. Publicação em produção aguarda decisão da cliente.
