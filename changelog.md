@@ -47,3 +47,10 @@
 
 ### Teste humano
 - Canal Comunidade aprovado pela CEO em 12/09 23:31 ("Perfeito, teste realizado") — ciclo T3.01-pós fechado.
+
+## [0.0.435] — 2026-09-13 — Governança da leva 3 (WhatsApp P1)
+
+### Adicionado
+- **SPEC-3-002** — WhatsApp P1: registro estruturado de interações WhatsApp na oportunidade (coleção `interacoes_whatsapp` append-only, endpoint POST/GET server-side, UI no menu Mais ⌄, bloco WhatsApp na consulta 360º, auditoria). Critérios CA-3-006 a CA-3-008 com provas TDD.
+- **fase.md** — T3.03 detalhada (leva 3).
+- Estado: T3.03 em `aguardando_autorizacao`.
