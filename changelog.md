@@ -1,5 +1,32 @@
 # Changelog — CRM Vibratto
 
+## [0.0.437] — 2026-09-13 — T3.03 WhatsApp P1 implementada (aguardando teste humano)
+
+### Adicionado (T3.03 — WhatsApp P1, SPEC-3-002, doc Onda 3 §14)
+- **Coleção `interacoes_whatsapp`** (migration 0142): negócio (relation obrigatória), contato (relation opcional), direção (entrada/saida), resumo (5–5000 chars), resultado (sem_resposta/resposta/reuniao_agendada/proposta_solicitada/negativo), responsável, próxima ação (descrição + data), trilha json. Delete bloqueado (deleteRule null) — append-only.
+- **Hook `whatsapp_interacoes.js`** — 2 rotas: POST `/backend/v1/whatsapp/interacoes` (auth: valida negócio existe/não arquivado, resumo, resultado, direção; auditoria com snapshot mínimo; próxima ação futura atualiza a oportunidade — só contexto, nunca campos comerciais; save de sistema não dispara request hooks, guard T2.18 intacto) e GET `/backend/v1/whatsapp/interacoes?negocio=X` (lista -created com nomes expandidos).
+- **UI `WhatsAppNegocio`** — botão "WhatsApp" no menu Mais ⌄ da oportunidade: registro (direção, resultado, resumo, próxima ação) + lista das interações.
+- **Consulta 360º** — novo bloco `whatsapp` (total, última interação, próxima ação via WhatsApp) no endpoint e na UI.
+
+### Corrigido no caminho
+- GET quebrava: `e.request.query()` não existe no JSVM — correto é `e.request.url.query().get(...)` (v0.0.436; diagnóstico via logs do Skip).
+
+### Provas (CA-3-006 a CA-3-008)
+- RED: 401 sem auth · 404 negócio inexistente · 400 resumo curto · 400 resultado inválido · 400 direção inválida · 400 GET sem negócio · 403 delete.
+- GREEN: POST 200 (com e sem próxima ação; `proxima_acao_atualizada: true` e oportunidade refletindo) · GET 200 lista ordenada · 360º com bloco whatsapp.
+- Limpeza (0143): fixtures de prova removidas, próxima ação original da Felicidade restaurada; caso real registrado (1 interação, reunião_agendada) para o teste humano.
+- QA verde v0.0.435→0.0.437.
+
+### Pendência de verificação
+- Abertura do modal WhatsApp via clique no menu não confirmada no teste automatizado de browser (item do menu presente e clicável; modal não renderizou no snapshot) — verificar no teste humano.
+
+## [0.0.435] — 2026-09-13 — Governança da leva 3 (WhatsApp P1)
+
+### Adicionado
+- **SPEC-3-002** — WhatsApp P1: registro estruturado de interações WhatsApp na oportunidade (coleção `interacoes_whatsapp` append-only, endpoint POST/GET server-side, UI no menu Mais ⌄, bloco WhatsApp na consulta 360º, auditoria). Critérios CA-3-006 a CA-3-008 com provas TDD.
+- **fase.md** — T3.03 detalhada (leva 3).
+- Estado: T3.03 em `aguardando_autorizacao`.
+
 ## [0.0.434] — 2026-09-13 — T3.02b implementada (aguardando teste humano)
 
 ### Adicionado (T3.02b — ficha de preparação da proposta, doc Onda 3 §10)
@@ -47,10 +74,3 @@
 
 ### Teste humano
 - Canal Comunidade aprovado pela CEO em 12/09 23:31 ("Perfeito, teste realizado") — ciclo T3.01-pós fechado.
-
-## [0.0.435] — 2026-09-13 — Governança da leva 3 (WhatsApp P1)
-
-### Adicionado
-- **SPEC-3-002** — WhatsApp P1: registro estruturado de interações WhatsApp na oportunidade (coleção `interacoes_whatsapp` append-only, endpoint POST/GET server-side, UI no menu Mais ⌄, bloco WhatsApp na consulta 360º, auditoria). Critérios CA-3-006 a CA-3-008 com provas TDD.
-- **fase.md** — T3.03 detalhada (leva 3).
-- Estado: T3.03 em `aguardando_autorizacao`.
