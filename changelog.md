@@ -1,22 +1,28 @@
 # Changelog — CRM Vibratto
 
-## [0.0.417] — 2026-09-13 — T3.02 CONCLUÍDA (teste humano aprovado)
+## [0.0.418] — 2026-09-13 — T3.02 CONCLUÍDA (teste humano aprovado)
 
 ### Adicionado (T3.02 — formulários inteligentes, SPEC-3-001)
-- Coleção `formularios` (migration 0130): token único de 48 chars, vínculos contato/empresa/oportunidade, respostas JSON, resumo, consentimento LGPD, trilha append-only. Regras: leitura autenticada; create/update/delete somente server-side.
-- Hook `formularios_inteligentes.js`: POST /backend/v1/formularios/gerar (auth), POST /backend/v1/formularios/enviar/{id} (auth), GET/POST /backend/v1/formularios/publico/{token} (público, resposta única, LGPD obrigatório).
-- Campos de contexto na oportunidade: `formulario_status`, `dados_formulario`, `formulario_resumo` — atualização automática ao responder (perfil, volume, complexidade, dores, objetivos, urgência; NUNCA campos comerciais).
-- UI: `FormularioNegocio` (gerar link, copiar, marcar enviado, ver resumo) + página pública `/formulario/:token` (3 formulários: BPO 16 campos, CFO 11, Consultoria 10, mobile-first).
-- Provas API: 401 sem auth, 400 solução inválida/sem LGPD, 409 reenvio, 404 token inválido, 200 gerar/ler/responder/enviar, delete 403, auditoria 3 eventos. Evidência: artifacts/T302_evidencia_ca3002.md.
+- **Coleção `formularios`** (migration 0130): token único 48 chars, negócio/contato/empresa, solução (bpo_financeiro/cfo_as_a_service/consultoria), status (gerado/enviado/respondido/expirado), respostas JSON, resumo, consentimento LGPD + versão, trilha append-only. Create/update/delete apenas server-side (null rules).
+- **Hook `formularios_inteligentes.js`** — 4 rotas: POST gerar (auth), POST enviar/{id} (auth), GET/POST publico/{token} (público). Resposta única (409 em reenvio), consentimento LGPD obrigatório (400 sem), atualização automática da oportunidade com contexto estruturado (perfil/volume/complexidade/dores/objetivos) — nunca campos comerciais. Auditoria em toda transição.
+- **UI interna** — botão "Formulário" no menu Mais ⌄ da oportunidade: gerar link (copia automático), marcar enviado, ver resumo da resposta.
+- **Página pública** `/formulario/:token` (mobile-first, sem login): BPO 16 campos, CFO 11, Consultoria 10 (doc Onda 3 §6-8) + LGPD obrigatório.
+- **Campos de contexto na oportunidade** (0130): formulario_status, dados_formulario (json), formulario_resumo.
 
 ### Corrigido
-- **DEBUG T3.02**: botão "Mais ⌄" não abria — listener global de clique fechava o menu no mesmo evento; fix `stopPropagation` (v0.0.415), verificado no browser real (menu com 4 itens). Debug: 06_notas/debug/debug-2026-09-12-t302-botao-mais.md.
-- Limpeza de fixtures de prova: migrations 0131–0134 falharam silenciosamente; 0135 com `app.delete(record)` removeu as 2 fixtures (base limpa: 0 formulários, 3 negócios reais).
+- Botão "Mais ⌄" do card não abria o menu — listener global de clique fechava o menu no mesmo evento; fix com stopPropagation (v0.0.415, debug-2026-09-12-t302-botao-mais.md).
 
-### Lições (AP-2026-09-13-0040)
-- JSVM: em migration, delete de registro é `app.delete(rec)` no app da migration — `$app.delete(rec)` não remove (falha silenciosa em try/catch).
-- Listener global de clique fecha menus no mesmo evento do botão — usar `stopPropagation` no botão que abre.
-- Rotas: `/{id}/enviar` conflita com `/publico/{token}` no routescan — usar `/enviar/{id}`.
+### Provas (CA-3-002 a CA-3-005)
+- RED/GREEN por API: 401 sem auth · 400 solução inválida · 200 gerar (token 48) · 200 leitura pública · 400 sem LGPD · 200 resposta com LGPD · 409 reenvio · 404 token inválido · oportunidade atualizada (status+resumo+dados_formulario) · 403 delete · 200 enviar · 3 eventos de auditoria.
+- QA verde v0.0.408→0.0.418. Evidência: artifacts/T302_evidencia_ca3002.md (workspace).
+
+### Teste humano
+- Aprovado pela CEO em 12/09 23:55 ("funcionou") após correção do botão Mais.
+
+### Pendências
+- Delete de registros via migration ($app.delete) não removeu fixtures — resolvido por invalidação (status expirado); investigar causa raiz do delete em debug futuro.
+- Card "Contas & Empresas" sem página própria (Fase 3).
+- Corrigir contato "ROMEU" → maiúscula.
 
 ## [0.0.408] — 2026-09-12 — Governança do ciclo T3.01-pós + SPEC-3-001 (T3.02)
 
