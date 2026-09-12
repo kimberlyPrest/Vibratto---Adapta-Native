@@ -67,3 +67,19 @@
 ## 4. Pedidos da CEO (aditivo — 13/09)
 
 - **Harmonização visual dos cards** (pedido 13/09, 10:47): os cards de cada task/tela devem seguir o padrão visual dos cards de módulo da home (ícone em quadrado preto com glifo dourado, título bold, descrição cinza, CTA dourado "Abrir X →", fundo bege claro) — referência: prints enviados pela CEO (cards "Pipeline Comercial", "Base de Contatos", "Contas & Empresas"). Aplicável a: cards de oportunidade, cards de módulo, cards de automações e próximos painéis. Entra como task formal com SPEC quando a CEO autorizar; sugestão de posição na sequência: junto do item "Painel por papel" (mesma frente visual).
+
+
+## 5. Módulo de Operação — Ficha Operacional do Cliente (aditivo — 13/09)
+
+**Fonte:** documento "Ficha Operacional do Cliente — Especificação Dev" v1.0 (12/09/2026, autoria Deniane Bezerra; base: 8 procedimentos operacionais de clientes ativos + 5 roteiros de processo). Pedido da CEO: ficha no CRM com acesso limitado aos analistas; rotinas repetitivas serão automatizadas, mas a ficha permanece como referência operacional.
+
+**Decisão central do documento:** o procedimento operacional deixa de ser documento manual e passa a ser TEXTO GERADO a partir dos parâmetros cadastrados — manutenção no cadastro, não no documento. Um processo único com configurações diferentes por cliente.
+
+**Quebra em levás (recorte por task formal):**
+1. **Leva A — Ficha Operacional** (blocos 1–9: identificação/responsáveis, canais de entrada, sistema de gestão, contas bancárias, contas a pagar, faturamento, conciliação, fechamento, pessoas do cliente) + **procedimento gerado** (cap. 3, versionado, exportável, sem credencial).
+2. **Leva B — Motor de rotinas** (cap. 4: geração automática de obrigações com calendário de dias úteis, baixa em um toque, baixa em lote, substituição titular→reserva) + **controle de exceções** (cap. 5: 10 exceções com gatilho/prazo/destinatário).
+3. **Leva C — Visões** (cap. 6: analista, coordenação, comercial somente leitura) + **implantação** (cap. 7: modelo padrão de etapas) + **permissões** (cap. 8: direção/coordenação/analista/comercial).
+
+**Decisões pendentes da CEO (cap. 11 do documento):** cofre de senhas a adotar; prazos de resposta por cliente (base dos alertas); feriados municipais; parâmetros de conciliação/fechamento (só existem procedimentos de contas a pagar e faturamento); volumes de referência contratados.
+
+**Regra de segurança inegociável (cap. 9):** nenhuma tabela armazena credencial — os campos de cofre guardam apenas o IDENTIFICADOR do item no cofre corporativo.
