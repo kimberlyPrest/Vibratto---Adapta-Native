@@ -1,13 +1,13 @@
 # Status
 
-**Status:** Fase 3 EM EXECUÇÃO — 11/N tasks concluídas
+**Status:** Fase 3 EM EXECUÇÃO — 12/N tasks concluídas
 **Cliente:** Vibratto Assessoria Empresarial Ltda.
 **Task ativa:** nenhuma (T3.09 concluída)
 **Última task concluída:** T3.10 — painel por papel + metas + comparativo (2026-09-13 12:17)
-**Task no portão:** T3.11 — Ficha Operacional Leva A (v0.0.487)
+**Task no portão:** nenhuma — T3.11 concluída (teste humano executado, 23 testes com dados reais)
 **Próxima leva:** fila de trabalho pessoal + comentários/menções → painel por papel + metas → relatórios agendados → perfis/visibilidade/backup → V.ia estágio 1 → catálogo (sequência acordada do backlog Etapa 3)
 **Preview:** https://tela-de-login-crm-a400a--preview.goskip.app — formulário público em /entrada
-**Versão atual:** v0.0.474 (QA verde)
+**Versão atual:** v0.0.488 (QA verde)
 **Produção:** não publicada (decisão da cliente)
 
 ## Composição da Fase 3 (em execução)
