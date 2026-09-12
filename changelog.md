@@ -1,5 +1,11 @@
 # Changelog — CRM Vibratto
 
+## [0.0.438] — 2026-09-13 — T3.03 CONCLUÍDA (teste humano aprovado)
+
+- 2026-09-13 · [Deni.Ai] · Task T3.03 concluída: WhatsApp P1 — registro estruturado de interações WhatsApp na oportunidade (coleção `interacoes_whatsapp` append-only 0142, endpoints POST/GET server-side, UI no menu Mais ⌄, bloco WhatsApp na consulta 360º). Provas RED/GREEN por API revalidadas do zero na conclusão (401/404/400/403; 200 POST+GET; 360º com bloco; auditoria com 5 eventos). Caso real: Felicidade Collective. Fix no caminho: `e.request.url.query()` no JSVM (v0.0.436). Limpezas 0143/0144 — base final com 2 interações reais. Teste humano aprovado pela CEO: "teste realizado e todos passaram". QA verde v0.0.435→0.0.438.
+- Aprendizado: AP-2026-09-13-0810-jsvm-request-url-query.md.
+- fase.md restaurado fielmente após erro de edição (sobrescrita truncada) — verificado byte a byte contra backup pré-edição; único diff é a atualização pretendida (T3.02b/T3.03 concluídas).
+
 ## [0.0.437] — 2026-09-13 — T3.03 WhatsApp P1 implementada (aguardando teste humano)
 
 ### Adicionado (T3.03 — WhatsApp P1, SPEC-3-002, doc Onda 3 §14)
@@ -14,11 +20,8 @@
 ### Provas (CA-3-006 a CA-3-008)
 - RED: 401 sem auth · 404 negócio inexistente · 400 resumo curto · 400 resultado inválido · 400 direção inválida · 400 GET sem negócio · 403 delete.
 - GREEN: POST 200 (com e sem próxima ação; `proxima_acao_atualizada: true` e oportunidade refletindo) · GET 200 lista ordenada · 360º com bloco whatsapp.
-- Limpeza (0143): fixtures de prova removidas, próxima ação original da Felicidade restaurada; caso real registrado (1 interação, reunião_agendada) para o teste humano.
+- Limpeza (0143): fixtures de prova removidas, próxima ação original da Felicidade restaurada; caso real registrado (1 interação, reuniao_agendada) para o teste humano.
 - QA verde v0.0.435→0.0.437.
-
-### Pendência de verificação
-- Abertura do modal WhatsApp via clique no menu não confirmada no teste automatizado de browser (item do menu presente e clicável; modal não renderizou no snapshot) — verificar no teste humano.
 
 ## [0.0.435] — 2026-09-13 — Governança da leva 3 (WhatsApp P1)
 
