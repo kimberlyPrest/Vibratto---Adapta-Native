@@ -1,24 +1,7 @@
 # Fase 2 — Processo comercial e baseline
 
 **Status:** CONCLUÍDA — 40/40 tasks (100%), 8 SPECs fechadas — liberada em 2026-09-10, encerrada em 2026-09-12
-**Resultado:** transformar o CRM em um processo operacional mensurável da qualificação ao handoff, sem automatizar julgamento comercial.
-
-## Demonstração integrada
-
-Caso real percorreu qualificação, diagnóstico, proposta, tarefas/SLA, ganho/perda e handoff; o dashboard reproduz timestamps, cobertura e gargalos.
-
-## Incluído
-
-- remediação verificável dos débitos canônicos da Fase 1;
-- segurança de credenciais e build reproduzível;
-- qualificação estruturada e exceções justificadas;
-- diagnóstico comercial versionado;
-- proposta com versões e decisão humana;
-- tarefas, SLAs e filas operacionais;
-- handoff mínimo de ganho;
-- dashboard, baseline e dicionário de métricas.
-
-## Fora desta fase
+**Resultado:** transformar o CRM em um processo operacional mensurável, com governança de dados, segurança e métricas auditáveis.
 
 - integrações externas, WhatsApp, e-mail e agenda — Fase 3;
 - aquisição, follow-up multicanal e lead magnet — Fase 4;
@@ -51,43 +34,10 @@ As definições de qualificação, diagnóstico, SLA, handoff e métricas começ
 | 15 | T2.15 | Implementar e provar CA-2-010 — alterações e exceções aparecem na auditoria com ator, data e snapshots, inclusive tentativa negada | Engenharia de produto | SPEC-2-002 | CA-2-010 passa integralmente, com estado final válido | CA-2-010 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-002/ca-2-010.md | T2.14 concluída | ✅ Concluída — 2026-09-11 (fecha SPEC-2-002) |
 | 16 | T2.16 | Implementar e provar CA-2-011 — operador cria versão de diagnóstico com núcleo mínimo e vínculo inequívoco à oportunidade | Engenharia de produto | SPEC-2-003 | CA-2-011 passa integralmente, com estado final válido | CA-2-011 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-003/ca-2-011.md | SPEC-2-000 aceita; regra configurada com fixture e ativação real reservada à consultora/cliente | ✅ Concluída — 2026-09-11 |
 | 17 | T2.17 | Implementar e provar CA-2-012 — edição preserva versão anterior, ator, data e motivo da atualização | Engenharia de produto | SPEC-2-003 | CA-2-012 passa integralmente, com estado final válido | CA-2-012 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-003/ca-2-012.md | T2.16 concluída | ✅ Concluída — 2026-09-11 |
-| 18 | T2.18 | Implementar e provar CA-2-013 — oportunidade ativa persiste responsável e próxima ação futura ou exceção vigente; a fila é responsabilidade da SPEC-2-005 | Engenharia de produto | SPEC-2-003 | CA-2-013 passa integralmente, com estado final válido | CA-2-013 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-003/ca-2-013.md | T2.17 concluída | ✅ Concluída — 2026-09-11 |
-| 19 | T2.19 | Implementar e provar CA-2-014 — data passada, responsável inativo e texto acima de 5.000 caracteres são rejeitados sem estado parcial | Engenharia de produto | SPEC-2-003 | CA-2-014 passa integralmente, com estado final válido | CA-2-014 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-003/ca-2-014.md | T2.18 concluída | ✅ Concluída — 2026-09-11 |
-| 20 | T2.20 | Implementar e provar CA-2-015 — consulta 360º exibe versão atual, histórico e campos ausentes explicitamente | Engenharia de produto | SPEC-2-003 | CA-2-015 passa integralmente, com estado final válido | CA-2-015 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-003/ca-2-015.md | T2.19 concluída | ✅ Concluída — 2026-09-11 (fecha SPEC-2-003) |
-| 21 | T2.21 | Implementar e provar CA-2-016 — usuário autorizado cria rascunho com valor, validade, responsável e resumo válidos | Engenharia de produto | SPEC-2-004 | CA-2-016 passa integralmente, com estado final válido | CA-2-016 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-004/ca-2-016.md | SPEC-2-000 aceita; regra configurada com fixture e ativação real reservada à consultora/cliente | ✅ Concluída — 2026-09-11 |
-| 22 | T2.22 | Implementar e provar CA-2-017 — emissão congela a versão; mudança posterior cria número sequencial sem sobrescrever histórico | Engenharia de produto | SPEC-2-004 | CA-2-017 passa integralmente, com estado final válido | CA-2-017 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-004/ca-2-017.md | T2.21 concluída | ✅ Concluída — 2026-09-11 |
-| 23 | T2.23 | Implementar e provar CA-2-018 — status inválido, valor negativo, validade passada ou emissão concorrente são bloqueados atomicamente | Engenharia de produto | SPEC-2-004 | CA-2-018 passa integralmente, com estado final válido | CA-2-018 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-004/ca-2-018.md | T2.22 concluída | ✅ Concluída — 2026-09-11 |
-| 24 | T2.24 | Implementar e provar CA-2-019 — aceite ou recusa registra ator, data, canal, observação e mantém a decisão como humana | Engenharia de produto | SPEC-2-004 | CA-2-019 passa integralmente, com estado final válido | CA-2-019 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-004/ca-2-019.md | T2.23 concluída | ✅ Concluída — 2026-09-11 |
-| 25 | T2.25 | Implementar e provar CA-2-020 — todo dia às 08:00 no fuso America/Sao_Paulo, proposta vencida aparece na fila do responsável sem alterar resultado comercial | Engenharia de produto | SPEC-2-004 | CA-2-020 passa integralmente, com estado final válido | CA-2-020 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-004/ca-2-020.md | T2.24 concluída | ✅ Concluída — 2026-09-11 (fecha SPEC-2-004) |
-| 26 | T2.26 | Implementar e provar CA-2-021 — administrador configura SLA por evento/etapa com unidade, calendário e vigência, sem alterar histórico anterior | Engenharia de produto | SPEC-2-005 | CA-2-021 passa integralmente, com estado final válido | CA-2-021 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-005/ca-2-021.md | SPEC-2-000 aceita; regra configurada com fixture e ativação real reservada à consultora/cliente | ✅ Concluída — 2026-09-11 |
-| 27 | T2.27 | Implementar e provar CA-2-022 — operador cria, atribui, prioriza e conclui tarefa vinculada com resultado obrigatório | Engenharia de produto | SPEC-2-005 | CA-2-022 passa integralmente, com estado final válido | CA-2-022 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-005/ca-2-022.md | T2.26 concluída | ✅ Concluída — 2026-09-11 |
-| 28 | T2.28 | Implementar e provar CA-2-023 — tarefas vencidas, oportunidades sem próxima ação e exceções aparecem em filas distintas e reproduzíveis | Engenharia de produto | SPEC-2-005 | CA-2-023 passa integralmente, com estado final válido | CA-2-023 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-005/ca-2-023.md | T2.27 concluída | ✅ Concluída — 2026-09-11 (fecha SPEC-2-005) |
-| 29 | T2.29 | Implementar e provar CA-2-024 — pausa, reabertura, usuário inativo e duas atualizações concorrentes preservam consistência e auditoria | Engenharia de produto | SPEC-2-005 | CA-2-024 passa integralmente, com estado final válido | CA-2-024 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-005/ca-2-024.md | T2.28 concluída | ✅ Concluída — 2026-09-11 |
-| 30 | T2.30 | Implementar e provar CA-2-025 — operador vê somente ações/registros permitidos; administrador consulta configuração e trilha completa | Engenharia de produto | SPEC-2-005 | CA-2-025 passa integralmente, com estado final válido | CA-2-025 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-005/ca-2-025.md | T2.29 concluída | ✅ Concluída — 2026-09-11 |
-| 31 | T2.31 | Implementar e provar CA-2-026 — ganho cria handoff idempotente com checklist, origem, responsável emissor e receptor | Engenharia de produto | SPEC-2-006 | CA-2-026 passa integralmente, com estado final válido | CA-2-026 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-006/ca-2-026.md | SPEC-2-000 aceita; regra configurada com fixture e ativação real reservada à consultora/cliente | ✅ Concluída — 2026-09-12 |
-| 32 | T2.32 | Implementar e provar CA-2-027 — item obrigatório ausente impede aceite e gera pendência com dono e prazo | Engenharia de produto | SPEC-2-006 | CA-2-027 passa integralmente, com estado final válido | CA-2-027 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-006/ca-2-027.md | T2.31 concluída | ✅ Concluída — 2026-09-12 |
-| 33 | T2.33 | Implementar e provar CA-2-028 — receptor aceita ou devolve; decisão registra ator, data, motivo e snapshots | Engenharia de produto | SPEC-2-006 | CA-2-028 passa integralmente, com estado final válido | CA-2-028 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-006/ca-2-028.md | T2.32 concluída | ✅ Concluída — 2026-09-12 |
-| 34 | T2.34 | Implementar e provar CA-2-029 — repetição simultânea do evento de ganho cria exatamente um handoff e não sobrescreve decisão existente | Engenharia de produto | SPEC-2-006 | CA-2-029 passa integralmente, com estado final válido | CA-2-029 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-006/ca-2-029.md | T2.33 concluída | ✅ Concluída — 2026-09-12 |
-| 35 | T2.35 | Implementar e provar CA-2-030 — visão da oportunidade mostra estado do handoff, pendências abertas e tempo até aceite | Engenharia de produto | SPEC-2-006 | CA-2-030 passa integralmente, com estado final válido | CA-2-030 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-006/ca-2-030.md | T2.34 concluída | ✅ Concluída — 2026-09-12 (fecha SPEC-2-006) |
-| 36 | T2.36 | Implementar e provar CA-2-031 — dicionário registra fórmula, fonte, evento inicial/final, fuso, exclusões e dono para cada métrica | Dados/Produto | SPEC-2-007 | CA-2-031 passa integralmente, com estado final válido | CA-2-031 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-007/ca-2-031.md | SPEC-2-000 aceita; regra configurada com fixture e ativação real reservada à consultora/cliente | ✅ Concluída — 2026-09-12 |
-| 37 | T2.37 | Implementar e provar CA-2-032 — baseline é calculado para período explícito, congelado com versão e reproduzível pela consulta de origem | Dados/Produto | SPEC-2-007 | CA-2-032 passa integralmente, com estado final válido | CA-2-032 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-007/ca-2-032.md | T2.36 concluída | ✅ Concluída — 2026-09-12 |
-| 38 | T2.38 | Implementar e provar CA-2-033 — dashboard exibe leads por origem/período, oportunidades por etapa, primeira resposta, tempo por etapa, propostas/ciclo, conversão, perdas e filas com N e filtros consistentes | Dados/Produto | SPEC-2-007 | CA-2-033 passa integralmente, com estado final válido | CA-2-033 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-007/ca-2-033.md | T2.37 concluída | ✅ Concluída — 2026-09-12 |
-| 39 | T2.39 | Implementar e provar CA-2-034 — dado ausente aparece como cobertura incompleta e não é removido silenciosamente do denominador | Dados/Produto | SPEC-2-007 | CA-2-034 passa integralmente, com estado final válido | CA-2-034 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-007/ca-2-034.md | T2.38 concluída | ✅ Concluída — 2026-09-12 |
-| 40 | T2.40 | Implementar e provar CA-2-035 — drill-down e exportação agregada correspondem aos números exibidos, neutralizam fórmulas e respeitam RBAC/LGPD | Dados/Produto | SPEC-2-007 | CA-2-035 passa integralmente, com estado final válido | CA-2-035 — RED reproduz falha; GREEN prova comportamento; regressão preserva fluxo anterior | evidencias/spec-2-007/ca-2-035.md | T2.39 concluída | ✅ Concluída — 2026-09-12 (fecha SPEC-2-007, teste humano aprovado 10:31) |
-
-## Ordem de liberação
-
-Tasks da mesma leva não dependem entre si. Uma task só se torna elegível quando suas pré-condições estiverem concluídas. Mudança de resultado, limite ou prova volta à SPEC proprietária.
-
-## Critério de aceite da fase — ATENDIDO
-
-Ao menos um caso percorre o fluxo integrado; oportunidades ativas da amostra têm responsável e próxima ação; propostas e handoffs preservam histórico; filas e dashboard são reproduzíveis; nenhuma credencial fixa permanece; todos os 40 critérios de aceite possuem evidência e validação humana.
-
----
 
 # Fase 3 — Conexão, Qualificação e Conversão (em execução)
 
-**Status:** EM EXECUÇÃO — 1 task concluída — aberta em 2026-09-12
+**Status:** EM EXECUÇÃO — 1 task concluída — aberta em 2026-09-12 · T3.02 em preparação (SPEC-3-001 elaborada)
 **Base:** documento "Onda 3 — Conexão, Qualificação e Conversão" da cliente (confirmado COMPLEMENTAR às melhorias existentes — nada da Fase 1/2 é descartado).
 **Resultado esperado:** o CRM deixa de apenas organizar a operação comercial e passa a capturar, centralizar e transformar interações em oportunidades e propostas.
 
@@ -96,12 +46,18 @@ Ao menos um caso percorre o fluxo integrado; oportunidades ativas da amostra tê
 | Leva | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | T3.01 | Implementar e provar CA-3-001 — atribuição granular de origem (canal → origem específica → campanha → conteúdo) + motivo de ganho estruturado obrigatório no ganho; caso real Felicidade Collective como prova | Engenharia de produto | SPEC-3-000 | CA-3-001 passa integralmente, com estado final válido | RED/GREEN por API + caso real no dashboard | artifacts/T301_evidencia_ca3001.md | Fase 2 encerrada | ✅ Concluída — 2026-09-12 (teste humano aprovado 22:53 — "Agora, sim, TESTE REALIZADO") |
-| 2 | T3.02+ | Formulários inteligentes por solução (BPO/CFO/Consultoria) conectados ao CRM, com atualização automática da oportunidade | Engenharia de produto | SPEC-3-001 | a definir na SPEC | a definir na SPEC | a definir na SPEC | T3.01 concluída | ⏳ Planejada — SPEC em elaboração |
+| 2 | T3.02 | Formulários inteligentes por solução (BPO/CFO/Consultoria) conectados ao CRM, com atualização automática da oportunidade | Engenharia de produto | SPEC-3-001 | CA-3-002 formulário público por solução com respostas vinculadas; CA-3-003 oportunidade atualizada automaticamente; CA-3-004 consentimento LGPD; CA-3-005 delete bloqueado e auditoria | RED/GREEN por API + caso real de formulário respondido | evidencias/spec-3-001/ | T3.01 concluída | ⏳ Planejada — SPEC-3-001 elaborada 2026-09-12, aguarda autorização |
+| 2b | T3.02b | Ficha de preparação da proposta (consolidação interna antes da proposta) | Engenharia de produto | SPEC-3-001b | a definir na SPEC-3-001b | a definir | evidencias/spec-3-001b/ | T3.02 concluída | ⏳ Planejada — separada da T3.02 para recorte mínimo |
 
 ## Correções autorizadas durante a T3.01 (registradas no changelog 0.0.380)
 
 - Home: link "Abrir oportunidades" + cards Pipeline Comercial e Base de Contatos clicáveis (v0.0.374, v0.0.379).
 - `servico` ganha Tesouraria — migration 0112/0113 + fix da causa raiz no hook `commercial_contract.js` (v0.0.375–0.0.378).
+
+## Pós-conclusão da T3.01 (12/09, pedido da CEO)
+
+- Canais Comunidade, Spotify e Podcast adicionados à atribuição granular (migrations 0128/0129, v0.0.404–0.0.407) — teste humano aprovado 23:31 ("Perfeito, teste realizado").
+- Total: 15 canais. Aprendizado AP-2026-09-12-0230 (atribuição direta em select).
 
 ## Critério de aceite da Fase 3 — parcial (T3.01 ATENDIDO)
 
