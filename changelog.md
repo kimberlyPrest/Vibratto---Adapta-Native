@@ -1,5 +1,19 @@
 # Changelog — CRM Vibratto
 
+## [0.0.441] — 2026-09-13 — T3.05 E-mail P1 implementada (aguardando teste humano)
+
+### Adicionado (T3.05 — E-mail P1, SPEC-3-004, doc Onda 3 §14)
+- **Coleção `interacoes_email`** (migration 0145): negócio (relation obrigatória), contato (relation opcional), direção (entrada/saida), assunto (3–300 chars), resumo (5–5000 chars), resultado (sem_resposta/resposta/reuniao_agendada/proposta_solicitada/negativo), responsável, próxima ação (descrição + data), trilha json. Delete bloqueado (deleteRule null) — append-only.
+- **Hook `email_interacoes.js`** — 2 rotas: POST `/backend/v1/email/interacoes` (auth: valida negócio existe/não arquivado, assunto, resumo, resultado, direção; auditoria com snapshot mínimo; próxima ação futura atualiza a oportunidade — só contexto, nunca campos comerciais; guard T2.18 intacto) e GET `/backend/v1/email/interacoes?negocio=X` (lista -created com nomes expandidos).
+- **UI `EmailNegocio`** — botão "E-mail" no menu Mais ⌄ da oportunidade: registro (direção, assunto, resumo, resultado, próxima ação) + lista das interações.
+- **Consulta 360º** — novo bloco `email` (total, última interação com assunto, próxima ação via e-mail) no endpoint e na UI.
+
+### Provas (CA-3-012 a CA-3-014)
+- RED: 401 sem auth · 404 negócio inexistente · 400 assunto curto · 400 resumo curto · 400 resultado inválido · 400 direção inválida · 400 GET sem negócio · 403 delete.
+- GREEN: POST 200 (com e sem próxima ação; `proxima_acao_atualizada: true` e oportunidade refletindo; campos comerciais intocados) · GET 200 lista ordenada · 360º com bloco email · 2 eventos de auditoria.
+- Limpeza (0146): fixtures de prova removidas, próxima ação original da Felicidade restaurada; caso real registrado (1 interação) para o teste humano.
+- QA verde v0.0.440→0.0.441.
+
 ## [0.0.440] — 2026-09-13 — T3.04 CONCLUÍDA (teste humano delegado aprovado)
 
 - 2026-09-13 · [Deni.Ai] · Task T3.04 concluída: Timeline 360º — consolidação cronológica server-side de 9 fontes existentes (endpoint GET /backend/v1/negocios/{id}/timeline, somente leitura, sem nova coleção) + UI no menu Mais ⌄ com badges por tipo. Provas RED/GREEN por API (401/404; Felicidade 8 eventos de 5 tipos em ordem desc; negócio simples 40 eventos; contagens das fontes inalteradas — somente leitura). Teste humano delegado pela CEO e executado no browser real: modal abriu com 6 eventos visíveis em ordem correta (Diagnóstico v1, WhatsApps, Handoff, Etapa, Entrada com origem/campanha) — print artifacts/t304_timeline_aberto.png. QA verde v0.0.439→0.0.440.
@@ -15,6 +29,9 @@
 - RED: 401 sem auth · 404 negócio inexistente.
 - GREEN: Felicidade Collective — 8 eventos de 5 tipos (entrada, etapa, whatsapp, handoff, diagnostico, decisao) em ordem desc com autores; negócio simples — 40 eventos; contagens das coleções-fonte idênticas antes/depois de 3 chamadas (somente leitura confirmado).
 - QA verde v0.0.439.
+
+### Pendência de verificação
+- Abertura do modal Timeline via clique no menu não confirmada no teste automatizado de browser (item presente e clicável) — verificar no teste humano.
 
 ## [0.0.438] — 2026-09-13 — T3.03 CONCLUÍDA (teste humano aprovado)
 
