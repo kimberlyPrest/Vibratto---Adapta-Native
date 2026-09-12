@@ -1,5 +1,19 @@
 # Changelog — CRM Vibratto
 
+## [0.0.439] — 2026-09-13 — T3.04 Timeline 360º implementada (aguardando teste humano)
+
+### Adicionado (T3.04 — Timeline 360º, SPEC-3-003, doc Onda 3 §13)
+- **Hook `timeline_endpoint.js`** — `GET /backend/v1/negocios/{id}/timeline` (auth, somente leitura): consolida eventos de 9 fontes existentes (negocios: entrada/origem/pausa/reabertura/decisão; permanencias_negocio: mudanças de etapa; formularios; interacoes_whatsapp; interacoes; diagnosticos; propostas com decisão; tarefas; handoffs) em lista cronológica desc com `{tipo, data, titulo, detalhe, autor}`. Resumo truncado a 200 chars; limite 300 eventos com flag `truncado`; falha de fonte vira aviso `fontes_com_erro` (nada omitido silenciosamente); sem nova coleção.
+- **UI `TimelineNegocio`** — botão "Timeline" no menu Mais ⌄ da oportunidade: linha do tempo vertical com badges por tipo (Entrada, Etapa, Formulário, WhatsApp, E-mail, Reunião, Diagnóstico, Proposta, Tarefa, Handoff, Decisão), data pt-BR, detalhe e autor; avisos de fontes com erro e truncamento; estado vazio explícito.
+
+### Provas (CA-3-009 a CA-3-011)
+- RED: 401 sem auth · 404 negócio inexistente.
+- GREEN: Felicidade Collective — 8 eventos de 5 tipos (entrada, etapa, whatsapp, handoff, diagnostico, decisao) em ordem desc com autores; negócio simples — 40 eventos; contagens das coleções-fonte idênticas antes/depois de 3 chamadas (somente leitura confirmado).
+- QA verde v0.0.439.
+
+### Pendência de verificação
+- Abertura do modal Timeline via clique no menu não confirmada no teste automatizado de browser (item presente e clicável) — verificar no teste humano.
+
 ## [0.0.438] — 2026-09-13 — T3.03 CONCLUÍDA (teste humano aprovado)
 
 - 2026-09-13 · [Deni.Ai] · Task T3.03 concluída: WhatsApp P1 — registro estruturado de interações WhatsApp na oportunidade (coleção `interacoes_whatsapp` append-only 0142, endpoints POST/GET server-side, UI no menu Mais ⌄, bloco WhatsApp na consulta 360º). Provas RED/GREEN por API revalidadas do zero na conclusão (401/404/400/403; 200 POST+GET; 360º com bloco; auditoria com 5 eventos). Caso real: Felicidade Collective. Fix no caminho: `e.request.url.query()` no JSVM (v0.0.436). Limpezas 0143/0144 — base final com 2 interações reais. Teste humano aprovado pela CEO: "teste realizado e todos passaram". QA verde v0.0.435→0.0.438.
