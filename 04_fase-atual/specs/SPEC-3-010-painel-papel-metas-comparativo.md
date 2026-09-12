@@ -15,6 +15,11 @@ Painel de Direção (CEO) com 12 KPIs organizados em 4 grupos (Aquisição, Pipe
 - Regras: CRUD admin-only (create/update/delete `@request.auth.role = 'admin'`); leitura autenticada.
 - Seed inicial (migration): metas da CEO para Q3/Q4 2026 — novos_clientes_cfo_mensal = 2 (6 até dez/2026), diagnosticos_semanais = 1.5 (média de 1–2), horas_venda_semanais = 4. Valores EDITÁVEIS pelo admin sem código.
 
+### 2.1b Campo `recorrencia` em `negocios` (migration)
+- select: `mensal` | `unico`, padrão `mensal`, aplicável a todos os serviços (BPO/Tesouraria/Controladoria ignoram o campo na prática — regra fixa).
+- No ganho de negócio de Consultoria ou CFO as a Service, o formulário de decisão pergunta a recorrência (UI: select no modal de ganho quando serviço ∈ {consultoria, cfo_as_a_service}).
+- Negócios ganhos existentes: migration preenche `mensal` (premissa atual — revisável caso a CEO saiba de contrato único).
+
 ### 2.2 Endpoint `GET /backend/v1/painel/{papel}` (hook `painel_papel_endpoint.js`)
 - Papéis: direcao | comercial | controladoria | administracao. Papel inválido → 400. Sem auth → 401.
 - **Período**: mês corrente por padrão; `?periodo_inicio=&periodo_fim=` opcional (mesma validação do dashboard comercial).
@@ -40,9 +45,9 @@ Painel de Direção (CEO) com 12 KPIs organizados em 4 grupos (Aquisição, Pipe
 
 ### 2.4 Premissa do MRR (decisão da CEO, 13/09)
 - Contratos de BPO, Tesouraria e Controladoria têm vigência de **12 meses com renovação automática** — o campo `valor` do negócio é a **mensalidade** do contrato anual recorrente.
-- Consequência: MRR = soma do `valor` dos negócios ganhos ativos (não arquivados, não perdidos). Nenhum ajuste one-off é aplicado.
-- O painel exibe a premissa explicitamente: "MRR = mensalidade de contratos de 12 meses renováveis automaticamente (BPO, Tesouraria, Controladoria)".
-- Se no futuro a Vibratto vender projeto one-off, a regra será revisada (task própria) — hoje não existe esse tipo de contrato no modelo.
+- Consequência: para BPO, Tesouraria e Controladoria, MRR = soma direta do `valor` dos negócios ganhos ativos.
+- **Consultoria e CFO as a Service podem ter prazo menor que 12 meses** (decisão da CEO, 13/09) — o `valor` desses serviços NÃO é automaticamente mensalidade recorrente. Tratamento: campo novo `recorrencia` (select: mensal | unico, padrão mensal) nos negócios ganhos desses dois serviços; MRR soma o valor apenas se `recorrencia = mensal`; contratos `unico` alimentam "Receita nova" mas não o MRR. BPO/Tesouraria/Controladoria não precisam do campo (regra fixa: sempre mensal).
+- O painel exibe a premissa explicitamente: "MRR = mensalidade de contratos de 12 meses renováveis (BPO, Tesouraria, Controladoria) + parcelas recorrentes de Consultoria/CFO marcadas como mensal".
 
 ### 2.5 LGPD e auditoria
 - Endpoint somente leitura, autenticado; nenhum dado pessoal novo é coletado; metas são dados internos de negócio.
