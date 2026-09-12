@@ -1,5 +1,10 @@
 # Changelog — CRM Vibratto
 
+## [0.0.448] — 2026-09-13 — T3.06 CONCLUÍDA (teste humano delegado aprovado)
+
+- 2026-09-13 · [Deni.Ai] · Task T3.06 concluída: Automações Se/Então — cron diário 08:05 BRT gera follow-up de proposta (3/7 dias) e alertas de saúde (sem próxima ação, parada) em log append-only idempotente (coleção `automacoes_execucoes` 0147, UNIQUE regra+negócio+dia, create/update/delete bloqueados) + execução manual admin + leitura agrupada + seção "Automações de hoje" no painel Operacional. Provas RED/GREEN por API (401/403/400; fixture gerou follow_up_proposta com detalhe correto; idempotente; proposta decidida não gera; create direto 403; regressão comercial confirmada). Teste humano delegado pela CEO e executado no browser real: painel com 4 cards corretos e estado vazio explícito — print artifacts/t306_teste_humano_painel.png. Pendências fechadas: evidencias/spec-3-005/ (CA-3-015 a 017) + AP-2026-09-13-0920. QA verde v0.0.443→0.0.448.
+- Aprendizado: AP-2026-09-13-0920-jsvm-cron-scoping.md (função top-level não é visível em callback de cron; QA do Skip bloqueia).
+
 ## [0.0.447] — 2026-09-13 — T3.06 Automações Se/Então implementada (aguardando teste humano)
 
 ### Adicionado (T3.06 — Automações Se/Então, SPEC-3-005, doc Onda 3 §12)
