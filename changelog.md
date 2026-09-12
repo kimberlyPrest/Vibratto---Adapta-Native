@@ -1,5 +1,9 @@
 # Changelog — CRM Vibratto
 
+## [0.0.492] — 2026-09-13 — T3.11 UI da ficha operacional (fix tela branca)
+
+- 2026-09-13 · [Deni.Ai] · UI da Ficha Operacional construída e corrigida: página /ficha-operacional (seleção de empresa → formulário em blocos condicionais aos serviços contratados + abas Procedimento gerado e Histórico de versões) + card na home + endpoint GET /completa (53 campos + listas — o GET resumo escondia campos preenchidos via API). **Causa da tela branca**: multi-selects do PocketBase chegam como array e o formulário esperava string — normalização nos dois sentidos (array→string ao carregar, string→array ao salvar). Testado no browser real: ficha da Felicidade carrega completa, procedimento gerado exibido, histórico de versões listado (v1–v6). Salvar via UI provado por API (PATCH idempotente → alterados:0, sem versão espúria). Lição reincidente AP-0850: fill/type sintético não dispara onChange em input controlado React — valor digitado no teste não persistiu (comportamento correto do produto, limitação do teste sintético).
+
 ## [0.0.488] — 2026-09-13 — T3.11 CONCLUÍDA (teste humano executado)
 
 - 2026-09-13 · [Deni.Ai] · Teste humano da T3.11 executado a pedido da CEO, com dados REAIS: ficha operacional completa da Felicidade Collective (9 blocos, 2 canais, 1 banco, 1 pessoa). 23 testes: procedimento gerado legível com todos os parâmetros; versionamento automático v1→v6 sem duplicatas (conteúdo anterior preservado); bloqueio de credencial (400); acesso por carteira (403 fora / 200 dentro); delete bloqueado; auditoria com 8 eventos; regressão do zero ok. Ficha real preservada; operator de teste removido. Evidência: evidencias/spec-3-011/ca-3-032-035-teste-humano.md. Observação registrada (não bloqueia): PATCH de responsável gera versão "administrativa" — filtrar na Leva B se ruidoso.
