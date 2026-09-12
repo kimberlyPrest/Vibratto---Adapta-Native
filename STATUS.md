@@ -21,7 +21,7 @@
 | 5 | T3.05 — E-mail P1 | SPEC-3-004 | ✅ Concluída — 2026-09-13 09:05 |
 | 6 | T3.06 — Automações Se/Então (§12) | SPEC-3-005 | ✅ Concluída — 2026-09-13 09:25 |
 | 7 | T3.07 — Porta 1, formulário de entrada | SPEC-3-006 | ✅ Concluída — 2026-09-13 10:06 |
-| 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ⏳ Analisada — aguardando autorização |
+| 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ⏳ Aguardando teste humano (v0.0.469) |
 | 9+ | painéis, relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
 
 ## Evidência da T3.07 (concluída)
