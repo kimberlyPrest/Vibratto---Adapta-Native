@@ -1,5 +1,10 @@
 # Changelog — CRM Vibratto
 
+## [0.0.440] — 2026-09-13 — T3.04 CONCLUÍDA (teste humano delegado aprovado)
+
+- 2026-09-13 · [Deni.Ai] · Task T3.04 concluída: Timeline 360º — consolidação cronológica server-side de 9 fontes existentes (endpoint GET /backend/v1/negocios/{id}/timeline, somente leitura, sem nova coleção) + UI no menu Mais ⌄ com badges por tipo. Provas RED/GREEN por API (401/404; Felicidade 8 eventos de 5 tipos em ordem desc; negócio simples 40 eventos; contagens das fontes inalteradas — somente leitura). Teste humano delegado pela CEO e executado no browser real: modal abriu com 6 eventos visíveis em ordem correta (Diagnóstico v1, WhatsApps, Handoff, Etapa, Entrada com origem/campanha) — print artifacts/t304_timeline_aberto.png. QA verde v0.0.439→0.0.440.
+- Aprendizado: AP-2026-09-13-0850-agent-browser-menu-click.md.
+
 ## [0.0.439] — 2026-09-13 — T3.04 Timeline 360º implementada (aguardando teste humano)
 
 ### Adicionado (T3.04 — Timeline 360º, SPEC-3-003, doc Onda 3 §13)
@@ -10,9 +15,6 @@
 - RED: 401 sem auth · 404 negócio inexistente.
 - GREEN: Felicidade Collective — 8 eventos de 5 tipos (entrada, etapa, whatsapp, handoff, diagnostico, decisao) em ordem desc com autores; negócio simples — 40 eventos; contagens das coleções-fonte idênticas antes/depois de 3 chamadas (somente leitura confirmado).
 - QA verde v0.0.439.
-
-### Pendência de verificação
-- Abertura do modal Timeline via clique no menu não confirmada no teste automatizado de browser (item presente e clicável) — verificar no teste humano.
 
 ## [0.0.438] — 2026-09-13 — T3.03 CONCLUÍDA (teste humano aprovado)
 
