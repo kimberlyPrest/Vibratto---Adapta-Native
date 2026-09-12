@@ -6,6 +6,7 @@
 - Provas: RED (401 meu-dia/notificacoes sem auth; 400 texto vazio; 403 create direto em notificacoes; 403 marcar lida de outro usuário; 400 re-marcar lida) + GREEN (comentário com menção → notificados:1 → notificação na lista do mencionado → meu-dia reflete; comentário na timeline como 10ª fonte; tarefa atribuída → notificação no operator; marcar lida grava lida_em; meu-dia do operator só mostra dados dele). Limpeza 0156/0157 (SQL) — base final 0 provas, 3 negócios e 3 leads reais intactos.
 - Debug no caminho: model hook onRecordCreate('tarefas') não executava (0 eventos de debug em auditoria em 3 tentativas) — substituído por onRecordAfterCreateSuccess, provado. AP a capturar.
 - QA verde v0.0.463–0.0.469.
+- 2026-09-13 11:23 · Teste humano da T3.08 aprovado pela CEO — "ta ficando tao lindo! teste aprovado". Fase 3: 9/N concluídas.
 
 ## [0.0.459] — 2026-09-13 — D2+D5 implementadas e provadas (correção autorizada pela CEO)
 

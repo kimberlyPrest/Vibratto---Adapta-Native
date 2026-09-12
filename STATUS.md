@@ -1,9 +1,9 @@
 # Status
 
-**Status:** Fase 3 EM EXECUÇÃO — 8/N tasks concluídas
+**Status:** Fase 3 EM EXECUÇÃO — 9/N tasks concluídas
 **Cliente:** Vibratto Assessoria Empresarial Ltda.
-**Task ativa:** T3.08 — fila de trabalho pessoal + comentários/menções (analisada, aguardando autorização)
-**Última task concluída:** T3.07 — Porta 1, formulário público de entrada (2026-09-13 10:06, teste humano aprovado pela CEO — "muito bom, validado!")
+**Task ativa:** nenhuma (T3.08 concluída)
+**Última task concluída:** T3.08 — fila de trabalho pessoal + comentários/menções (2026-09-13 11:23, teste humano aprovado pela CEO — "ta ficando tao lindo! teste aprovado")
 **Próxima leva:** fila de trabalho pessoal + comentários/menções → painel por papel + metas → relatórios agendados → perfis/visibilidade/backup → V.ia estágio 1 → catálogo (sequência acordada do backlog Etapa 3)
 **Preview:** https://tela-de-login-crm-a400a--preview.goskip.app — formulário público em /entrada
 **Versão atual:** v0.0.459 (QA verde)
@@ -21,7 +21,7 @@
 | 5 | T3.05 — E-mail P1 | SPEC-3-004 | ✅ Concluída — 2026-09-13 09:05 |
 | 6 | T3.06 — Automações Se/Então (§12) | SPEC-3-005 | ✅ Concluída — 2026-09-13 09:25 |
 | 7 | T3.07 — Porta 1, formulário de entrada | SPEC-3-006 | ✅ Concluída — 2026-09-13 10:06 |
-| 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ⏳ Aguardando teste humano (v0.0.469) |
+| 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ✅ Concluída — 2026-09-13 11:23 |
 | 9+ | painéis, relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
 
 ## Evidência da T3.07 (concluída)
