@@ -1,27 +1,17 @@
 # Changelog — CRM Vibratto
 
-## [0.0.401] — 2026-09-12 — Canais TikTok + Página de captura (correção pós-teste)
+## [0.0.403] — 2026-09-12 — T3.01 pós-conclusão: canal TikTok + correções da home
 
 ### Adicionado
 
-- **Canais novos na atribuição granular**: `tiktok` e `pagina_captura` (pedido da cliente, 12/09). Migration 0125 (atribuição direta `field.values` — técnica que persiste no JSVM; `.set()` não persiste, lição reforçada) + UI Opportunities com os 12 canais: Instagram, LinkedIn, TikTok, WhatsApp, Site, Google, Página de captura, Evento, Indicação, Tráfego pago, Parceiro, Outro.
-- **Uso**: página de captura com campanhas de Google Ads/Meta → Canal = Página de captura, Campanha = "Google Ads — CFO as a Service", Conteúdo = anúncio específico. Indicação de parceiro que chega no WhatsApp → Canal = Parceiro, Origem específica = "WhatsApp direto — [nome do parceiro]".
-- **Provas por API**: create com canal=tiktok → 200; create com canal=pagina_captura + campanha → 200; valor inválido → 400. Limpeza das provas (migration 0126) + remoção da coleção de diagnóstico temporária.
-- **Migrations queimadas sem rodar** (0116–0118, 0120, 0122, 0124): removidas do working tree após diagnóstico — o validador do pipeline rejeita remove+add de select sem values intermediário; versões finais: 0125 (fix) e 0126 (limpeza).
+- **Canal TikTok** na atribuição granular (pedido da cliente, 12/09): migration 0120 (atribuição direta `field.values = [...]` — padrão provado da 0112; as tentativas com `field.set('values', ...)` nas migrations 0115/0117/0119 NÃO persistiram neste runtime) + opção no formulário de oportunidade (UI). Provas: create com canal=tiktok 200; valor inválido 400 (regressão); base limpa após migration 0121 (3 negócios reais).
+- **Home**: card Base de Contatos clicável → /contatos (v0.0.379, mesmo padrão do card Pipeline Comercial v0.0.374).
 
-## [0.0.380] — 2026-09-12 — T3.01 CONCLUÍDA (teste humano aprovado) — FASE 3 ABERTA
+### Corrigido
 
-### Concluído
+- **Causa raiz do 400 em servico=tesouraria**: hook `commercial_contract.js` (T2.01) validava `servico` contra lista SERVICES hardcoded sem tesouraria, em DOIS callbacks (create e update). Fix em ambos (v0.0.378). Aprendizado registrado: AP-2026-09-12-0200.
+- Limpezas: migrations 0111 (fixtures T301), 0114 (prova da revalidação), 0121 (prova do TikTok). Base final: 3 negócios reais (Proposta BPO, Proposta CFO, Felicidade Collective).
 
-- CA-3-001 fechado: atribuição granular de origem (canal → origem específica → campanha → conteúdo) + motivo de ganho estruturado obrigatório. Teste humano aprovado pela cliente (2026-09-12 22:53 — "Agora, sim, TESTE REALIZADO").
-- **Migration 0110**: campos novos em `negocios` — `canal`, `origem_especifica`, `campanha`, `conteudo`, `motivo_ganho` (preco, escopo, relacionamento, urgencia, indicacao_interna, outro), `motivo_ganho_detalhe`. Campo `origem` antigo preservado.
-- **Hook `ganho_motivo_rules.js`** (request hook, dono único): ganho sem motivo → 400; motivo inválido → 400; `outro` sem detalhe → 400; motivo registrado não pode ser removido; reabertura limpa motivo com trilha preservada.
-- **UI Opportunities**: formulário com os 4 níveis de atribuição + bloco de ganho com motivo obrigatório e detalhe condicional.
-- **Dashboard**: blocos novos `leads_por_canal` e `ganhos_por_motivo` + drill-down + export CSV.
-- **Caso real registrado**: Felicidade Collective — BPO Financeiro e Tesouraria, R$ 8.336,11/mês, ganha 07/2026, canal indicação, motivo relacionamento, handoff único criado.
-- **Correções no caminho (autorizadas pela cliente)**:
-  - v0.0.374: home — link "Abrir oportunidades" + card Pipeline Comercial clicável.
-  - v0.0.379: home — card Base de Contatos clicável.
-  - v0.0.375–0.0.378: `servico` ganha **Tesouraria** — migration 0112/0113 + fix da causa raiz no hook `commercial_contract.js` (SERVICES hardcoded).
-- **Limpezas**: migrations 0111, 0114, 0119, 0126 — base final: 3 negócios reais.
-- **Revalidação independente**: ganho sem motivo 400 · com motivo 200 · inválido 400 · tesouraria 200 · Felicidade íntegra · dashboard consistente.
+### Lição técnica nova (candidata AP)
+
+- No JSVM do Skip, `field.set('values', arr)` em select NÃO persiste; a atribuição direta `field.values = arr` persiste. Validado por contraste: 0112 (atribuição direta) funcionou; 0117/0119 (set) aplicaram sem efeito observável.
