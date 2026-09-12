@@ -82,3 +82,27 @@ Tasks da mesma leva não dependem entre si. Uma task só se torna elegível quan
 ## Critério de aceite da fase — ATENDIDO
 
 Ao menos um caso percorre o fluxo integrado; oportunidades ativas da amostra têm responsável e próxima ação; propostas e handoffs preservam histórico; filas e dashboard são reproduzíveis; nenhuma credencial fixa permanece; todos os 40 critérios de aceite possuem evidência e validação humana.
+
+---
+
+# Fase 3 — Conexão, Qualificação e Conversão (em execução)
+
+**Status:** EM EXECUÇÃO — 1 task concluída — aberta em 2026-09-12
+**Base:** documento "Onda 3 — Conexão, Qualificação e Conversão" da cliente (confirmado COMPLEMENTAR às melhorias existentes — nada da Fase 1/2 é descartado).
+**Resultado esperado:** o CRM deixa de apenas organizar a operação comercial e passa a capturar, centralizar e transformar interações em oportunidades e propostas.
+
+## Tasks
+
+| Leva | ID | Task | Dono | SPEC | Critério | Recorte da prova | Evidência esperada | Pré-condições | Status |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | T3.01 | Implementar e provar CA-3-001 — atribuição granular de origem (canal → origem específica → campanha → conteúdo) + motivo de ganho estruturado obrigatório no ganho; caso real Felicidade Collective como prova | Engenharia de produto | SPEC-3-000 | CA-3-001 passa integralmente, com estado final válido | RED/GREEN por API + caso real no dashboard | artifacts/T301_evidencia_ca3001.md | Fase 2 encerrada | ✅ Concluída — 2026-09-12 (teste humano aprovado 22:53 — "Agora, sim, TESTE REALIZADO") |
+| 2 | T3.02+ | Formulários inteligentes por solução (BPO/CFO/Consultoria) conectados ao CRM, com atualização automática da oportunidade | Engenharia de produto | SPEC-3-001 | a definir na SPEC | a definir na SPEC | a definir na SPEC | T3.01 concluída | ⏳ Planejada — SPEC em elaboração |
+
+## Correções autorizadas durante a T3.01 (registradas no changelog 0.0.380)
+
+- Home: link "Abrir oportunidades" + cards Pipeline Comercial e Base de Contatos clicáveis (v0.0.374, v0.0.379).
+- `servico` ganha Tesouraria — migration 0112/0113 + fix da causa raiz no hook `commercial_contract.js` (v0.0.375–0.0.378).
+
+## Critério de aceite da Fase 3 — parcial (T3.01 ATENDIDO)
+
+Atribuição capturada nos 4 níveis; motivo de ganho obrigatório e estruturado; dashboard alimenta leitura estratégica (de onde vêm e por que compram os clientes); caso real percorrido. Os demais critérios (formulários, integrações, timeline, pós-venda, dashboard executivo, IA) serão definidos SPEC a SPEC.
