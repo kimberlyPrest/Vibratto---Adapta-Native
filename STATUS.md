@@ -2,7 +2,7 @@
 
 **Status:** Fase 3 EM EXECUÇÃO — 9/N tasks concluídas
 **Cliente:** Vibratto Assessoria Empresarial Ltda.
-**Task ativa:** nenhuma (T3.08 concluída)
+**Task ativa:** T3.09 — harmonização visual dos cards (analisada, aguardando autorização)
 **Última task concluída:** T3.08 — fila de trabalho pessoal + comentários/menções (2026-09-13 11:23, teste humano aprovado pela CEO — "ta ficando tao lindo! teste aprovado")
 **Próxima leva:** fila de trabalho pessoal + comentários/menções → painel por papel + metas → relatórios agendados → perfis/visibilidade/backup → V.ia estágio 1 → catálogo (sequência acordada do backlog Etapa 3)
 **Preview:** https://tela-de-login-crm-a400a--preview.goskip.app — formulário público em /entrada
@@ -22,7 +22,8 @@
 | 6 | T3.06 — Automações Se/Então (§12) | SPEC-3-005 | ✅ Concluída — 2026-09-13 09:25 |
 | 7 | T3.07 — Porta 1, formulário de entrada | SPEC-3-006 | ✅ Concluída — 2026-09-13 10:06 |
 | 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ✅ Concluída — 2026-09-13 11:23 |
-| 9+ | painéis, relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
+| 9 | T3.09 — harmonização visual dos cards | SPEC-3-008 | ⏳ Analisada — aguardando autorização |
+| 10+ | painéis, relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
 
 ## Evidência da T3.07 (concluída)
 
