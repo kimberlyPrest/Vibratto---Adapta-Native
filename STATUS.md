@@ -23,7 +23,8 @@
 | 7 | T3.07 — Porta 1, formulário de entrada | SPEC-3-006 | ✅ Concluída — 2026-09-13 10:06 |
 | 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ✅ Concluída — 2026-09-13 11:23 |
 | 9 | T3.09 — harmonização visual dos cards | SPEC-3-008 | ✅ Concluída — 2026-09-13 11:38 |
-| 10+ | painéis, relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
+| 10 | T3.10 — painel por papel + metas + comparativo | SPEC-3-010 | ✅ Concluída — 2026-09-13 12:17 |
+| 11+ | relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
 
 ## Evidência da T3.07 (concluída)
 
