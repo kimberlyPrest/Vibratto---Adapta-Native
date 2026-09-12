@@ -5,7 +5,7 @@
 **Task ativa:** nenhuma (T3.06 concluída)
 **Última task concluída:** T3.06 — Automações Se/Então (2026-09-13 09:25, teste humano delegado aprovado com print)
 **Próxima leva:** Instagram → agenda → pós-venda → dashboard executivo (a definir SPEC a SPEC)
-**Preview:** https://tela-de-login-crm-a400a--preview.goskip.app
+**Preview:** https://tela-de-login-crm-a400a--preview.goskip.app — formulário público em /entrada
 **Produção:** não publicada (decisão da cliente)
 
 ## Composição da Fase 3 (em execução)

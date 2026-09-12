@@ -1,14 +1,13 @@
 # Estado atual — Adapta Cliente
 
-- task_id: T3.06 (Automações Se/Então — §12 do doc Onda 3)
+- task_id: T3.07 (Porta 1 — formulário de entrada, SPEC-3-006)
 - champion: Deni.Ai
-- spec: SPEC-3-005-automacoes-se-entao.md (base: doc Onda 3 §12)
-- etapa: concluida
-- criterio: CA-3-015 execuções corretas e idempotentes; CA-3-016 alertas de saúde; CA-3-017 somente leitura comercial + leitura estruturada
-- autorizacao_implementacao: confirmada — 2026-09-13 09:00, owner: "sim"
-- teste_humano: aprovado — 2026-09-13 09:17, delegado à Deni.Ai pela owner ("FAÇA O TESTE E CORRIJA PENDENCIAS SE HOUVER") e executado no browser real: painel Operacional com seção "Automações de hoje" e 4 cards corretos (estado vazio explícito "Nada disparou hoje" — oportunidades saudáveis) — print artifacts/t306_teste_humano_painel.png
-- verificacao_automatica: passou — revalidação do zero: RED 401/403/400 (executar/GET sem auth, dia inválido, create direto, execução manual como operator); GREEN execução manual com base limpa (0 execuções — oportunidades saudáveis); GET agrupado por regra; regressão comercial confirmada (valor/estágio/status idênticos); provas com fixture registradas em evidencias/spec-3-005/; QA verde v0.0.443–0.0.447; limpeza 0148
-- aprendizado: capturado:06_notas/aprendizado-continuo/AP-2026-09-13-0920-jsvm-cron-scoping.md
-- ultima_acao: conclusão da T3.06 — pendências fechadas (evidências + AP + controle)
-- proxima_acao: aguardar liberação da próxima leva da Fase 3 (Instagram, agenda, pós-venda, dashboard executivo) ou ajustes que a CEO solicitar
-- atualizado_em: 2026-09-13T09:25:00-03:00
+- spec: 04_fase-atual/specs/SPEC-3-006-formulario-entrada-porta-1.md
+- etapa: aguardando_teste_humano
+- autorizacao_implementacao: confirmada — 2026-09-13 09:34, owner: "SIGA A SEQUENCIA" (sequência acordada do backlog Etapa 3; Porta 1 é a primeira)
+- teste_humano: pendente
+- verificacao_automatica: passou — QA verde v0.0.448–0.0.451; RED 6 (400×3, 401×2, 400 re-vínculo) + GREEN 5 (envio válido score 92/quente, lista, vincular, rate limit 429, honeypot) por API; limpeza 0150–0152 verificada (base 0 provas); dedup fica para o teste humano (rate limit bloqueou o reenvio de prova)
+- aprendizado: capturado:06_notas/aprendizado-continuo/AP-2026-09-13-t307-jsvm-header-ip.md
+- ultima_acao: implementação da T3.07 + provas + limpeza + governança GitHub
+- proxima_acao: aguardar teste humano da T3.07 (UI /entrada no celular + dedup + vincular)
+- atualizado_em: 2026-09-13T09:55:00-03:00
