@@ -5,6 +5,7 @@
 - 2026-09-13 · [Deni.Ai] · Harmonização visual dos cards (SPEC-3-008, pedido da CEO 13/09). **Oportunidades**: ícone por serviço em quadrado preto + glifo dourado (Briefcase=BPO, LineChart=Tesouraria, Calculator=Controladoria, UserCog=CFO, CircleDot=Outro), título Playfair bold, badge de etapa bege com borda dourada, valor em destaque bold, botões Editar/Qualificar/Diagnóstico/Mais em pill com borda dourada e hover dourado, hover do card com borda dourada + sombra. **Operacional**: 4 cards de automação com ícone por regra (BellRing, Hourglass, Clock, MessageSquareWarning) e contagem em destaque (text-lg bold, vermelho >0); 3 cards de fila (Tarefas vencidas, Sem próxima ação, Exceções vigentes) com ícones e contagem destacada. **Fix no caminho**: UserTie não existe no lucide-react 0.577 → UserCog (v0.0.474, build falhou e corrigido).
 - Provas: build verde v0.0.474; verificação no browser real — 3 cards de oportunidade com ícone preto presente, 12/12 botões com borda dourada, 7 cards bege com 7 ícones pretos no Operacional; prints artifacts/t309_oportunidades_harmonizado.png e t309_operacional_harmonizado.png. Mudança apenas visual — nenhum endpoint, coleção ou regra alterado.
 - QA verde v0.0.473–0.0.474.
+- 2026-09-13 11:38 · Teste humano da T3.09 aprovado pela CEO — "Esta incrivel! Aprovados". Fase 3: 10/N concluídas.
 
 ## [0.0.469] — 2026-09-13 — T3.08 implementada e provada (aguardando teste humano)
 
