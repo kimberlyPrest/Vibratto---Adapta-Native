@@ -1,5 +1,20 @@
 # Changelog — CRM Vibratto
 
+## [0.0.407] — 2026-09-12 — T3.01 pós-conclusão: canais Comunidade, Spotify e Podcast
+
+### Adicionado
+
+- **Canais Comunidade, Spotify e Podcast** na atribuição granular (pedido da CEO, 12/09 — leads vindos de comunidades como a Comunidade Clareza Financeira e de canais de áudio):
+  - Migration 0128 (canal `comunidade`) e 0129 (canais `spotify` e `podcast`) — técnica da atribuição direta `field.values = [...]` (padrão provado da 0112/0125; `field.set('values', ...)` não persiste neste runtime).
+  - UI: opção nos comboboxes do formulário de oportunidade (Opportunities.tsx) e no rótulo do dashboard (DashboardComercial.tsx CANAL_LABEL).
+  - Total: 15 canais (Instagram, LinkedIn, TikTok, WhatsApp, Site, Google, Página de captura, Comunidade, Spotify, Podcast, Evento, Indicação, Tráfego pago, Parceiro, Outro).
+- Provas por API (v0.0.407): PATCH canal=comunidade 200; canal=spotify 200; canal=podcast 200; canal=invalido_xyz 400 (validação select); restauração do valor original (Proposta CFO → linkedin). Base intacta: 3 negócios reais.
+- QA verde: v0.0.404 (0128), v0.0.405 (0129), v0.0.407 (UI) — setup/static/build/integrations/test ok.
+
+### Documentação
+
+- **Manual do CRM atualizado** (artifacts/Manual_CRM_Vibratto_Ondas1e2.docx, v0.0.407): situação atual do projeto (Fase 2 40/40, T3.01 concluída), nova Tela 4b (atribuição granular + motivo de ganho), prints frescos da home/contatos/oportunidades/dashboard/painel, lista de 15 canais, pendência do card "Contas & Empresas" registrada.
+
 ## [0.0.403] — 2026-09-12 — T3.01 pós-conclusão: canal TikTok + correções da home
 
 ### Adicionado
