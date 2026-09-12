@@ -62,3 +62,8 @@
 | Modelo de IA e fornecedor + tratamento de dados | V.ia estágio 1 |
 | Escopo fechado de perguntas do estágio 3 | V.ia estágio 3 (etapa 5) |
 | Verificação de disponibilidade do nome/domínio V.ia | Antes de qualquer divulgação externa |
+
+
+## 4. Pedidos da CEO (aditivo — 13/09)
+
+- **Harmonização visual dos cards** (pedido 13/09, 10:47): os cards de cada task/tela devem seguir o padrão visual dos cards de módulo da home (ícone em quadrado preto com glifo dourado, título bold, descrição cinza, CTA dourado "Abrir X →", fundo bege claro) — referência: prints enviados pela CEO (cards "Pipeline Comercial", "Base de Contatos", "Contas & Empresas"). Aplicável a: cards de oportunidade, cards de módulo, cards de automações e próximos painéis. Entra como task formal com SPEC quando a CEO autorizar; sugestão de posição na sequência: junto do item "Painel por papel" (mesma frente visual).

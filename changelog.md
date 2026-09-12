@@ -5,7 +5,8 @@
 - 2026-09-13 · [Deni.Ai] · Correções D2/D5 da T3.07 (autorização da CEO 10:34 — "PODE IMPLEMENTAR"). **D2**: relato opcional com mínimo 30 chars — validação server-side no hook leads_entrada.js (400 com mensagem clara) + contador orientador no UI /entrada (placeholder com exemplo, contador âmbar abaixo de 30, ✓ ao atingir). **D5**: retenção 24 meses — hook leads_entrada_retencao.js com cron diário 03:00 (padrão audit_retention.js) + execução manual admin-only POST /backend/v1/entrada/retencao/executar (padrão T3.06); leads `novo` eliminados 24 meses após coleta ou último contato (trilha); delete via $app.delete em contexto sistema (deleteRule null bloqueia só a API — provado 403).
 - Provas: D2 RED (10 chars → 400) + GREEN (43 chars → 200; sem relato → 200). D5 RED (sem auth 401) + GREEN funcional (fixture created retroativo 2024-08-01 via SQL em 0153 → execução manual removidos:1; leads reais intactos 3/3). Limpeza 0154 — base final 0 provas, 3 leads reais, rate limit restaurado para 3.
 - Fixes: AP-0920 reincidente (constante top-level em callback de cron → inline, v0.0.456); rate limit elevado temporariamente para 100 durante a prova GREEN D2 e restaurado.
-- QA verde v0.0.455–0.0.459.
+- QA verde v0.0.455–0.0.459. Governança GitHub commit 4242668 byte-compare OK.
+- 2026-09-13 10:47 · Teste humano das correções D2/D5 aprovado pela CEO — "CORREÇÕES TESTADAS, APROVE". Ciclo T3.07 fechado integralmente (task + correções). Pedido de harmonização visual dos cards registrado no backlog (aditivo).
 
 ## [0.0.459] — 2026-09-13 — D2+D5 implementadas (decisões da CEO de 13/09)
 
