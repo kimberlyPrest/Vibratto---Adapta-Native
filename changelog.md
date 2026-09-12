@@ -6,6 +6,7 @@
 - Provas: RED 3 (401 sem auth; 400 papel inválido; 400 período invertido) + GREEN (painel direção 15 KPIs com atual/anterior/variacao; MRR conferido à mão = 8.336,11 ✓; comparativo com duração igual provado 14d=14d; metas seed presentes; admin edita meta → pct reflete (300% com meta 1) e restaurada; operator cria meta bloqueado pela rule; recortes comercial/controladoria 6 KPIs; administracao redireciona). Limpeza 0159 — base final 0 provas, 3 negócios reais, 3 metas seed.
 - Nota: login via browser automatizado não persistiu (limitação conhecida do agent-browser com React controlado) — a verificação visual da UI fica para o teste humano da CEO.
 - QA verde v0.0.478–0.0.480.
+- 2026-09-13 12:17 · Teste humano da T3.10 aprovado pela CEO — "perfeito, pode concluir". Fase 3: 11/N concluídas.
 
 ## [0.0.474] — 2026-09-13 — T3.09 implementada (aguardando teste humano)
 
