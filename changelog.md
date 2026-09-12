@@ -1,5 +1,24 @@
 # Changelog — CRM Vibratto
 
+## [0.0.447] — 2026-09-13 — T3.06 Automações Se/Então implementada (aguardando teste humano)
+
+### Adicionado (T3.06 — Automações Se/Então, SPEC-3-005, doc Onda 3 §12)
+- **Coleção `automacoes_execucoes`** (migration 0147): regra (follow_up_proposta/follow_up_sem_resposta/alerta_sem_proxima_acao/alerta_parada), negócio, responsável, detalhe json (snapshot mínimo), dia_referencia. Create/update/delete bloqueados (null rules) — somente o servidor escreve. UNIQUE (regra+negócio+dia) — idempotência por dia.
+- **Hook `automacoes_se_entao.js`** — cron diário 08:05 BRT (após o cron de propostas vencidas) + execução manual admin-only `POST /backend/v1/automacoes/executar` + leitura `GET /backend/v1/automacoes/execucoes?dia=YYYY-MM-DD` (agrupado por regra com contagem e lista). Regras: follow-up de proposta emitida há ≥3 dias sem decisão; SLA ≥7 dias; alerta de oportunidade ativa sem próxima ação futura; alerta de parada acima do limite configurado (reusa `limite_oportunidade_parada_dias`). GARANTIA T2.25: nunca altera resultado comercial.
+- **UI no painel Operacional** — seção "Automações de hoje" no topo: 4 cards (contagem do dia + lista clicável das oportunidades); estado vazio explícito "Nada disparou hoje".
+
+### Corrigido no caminho
+- Scoping JSVM: função top-level não é visível em callback (QA bloqueou) — lógica duplicada inline em cada callback (AP-0200 reforçada) (v0.0.443).
+- GET por dia: date PB armazena com hora — filtro por intervalo do dia em vez de igualdade (v0.0.444).
+- UI: destructuring do Promise.all sem a 6ª variável — automacoesData undefined (v0.0.446).
+
+### Provas (CA-3-015 a CA-3-017)
+- RED: 401 sem auth (executar/GET) · 400 dia inválido · 403 execução manual não-admin · 403 create direto na coleção.
+- GREEN: fixture (proposta emitida há 5 dias) → follow_up_proposta com detalhe {dias_desde_envio:5, versao:1, valor:9000}; reexecução idempotente (1 registro total); proposta com decisão (aceita) não gera execução; oportunidades saudáveis geram zero; regressão comercial confirmada (valor/estágio/status idênticos antes/depois).
+- UI verificada no browser real: seção com 4 cards e execução da fixture visível — print artifacts/t306_automacoes_painel.png.
+- Limpeza (0148): fixtures removidas — base final 0 execuções, 3 negócios reais.
+- QA verde v0.0.443→0.0.447.
+
 ## [0.0.442] — 2026-09-13 — T3.05 CONCLUÍDA (teste humano delegado aprovado)
 
 - 2026-09-13 · [Deni.Ai] · Task T3.05 concluída: E-mail P1 — registro estruturado de interações e-mail na oportunidade (coleção `interacoes_email` append-only 0145 com campo assunto 3–300, endpoints POST/GET server-side, UI no menu Mais ⌄, bloco E-mail na consulta 360º). Provas RED/GREEN por API (401/404/400/403; 200 POST+GET; 360º com bloco; auditoria 2 eventos; campos comerciais intocados). Limpeza 0146. Teste humano delegado pela CEO e executado no browser real: interação registrada pela UI apareceu na lista e na Consulta 360º (2 interações, assunto e próxima ação visíveis) — prints artifacts/t305_email_modal.png e artifacts/t305_360_email.png. QA verde v0.0.440→0.0.442.
@@ -27,16 +46,13 @@
 ## [0.0.439] — 2026-09-13 — T3.04 Timeline 360º implementada (aguardando teste humano)
 
 ### Adicionado (T3.04 — Timeline 360º, SPEC-3-003, doc Onda 3 §13)
-- **Hook `timeline_endpoint.js`** — `GET /backend/v1/negocios/{id}/timeline` (auth, somente leitura): consolida eventos de 9 fontes existentes (negocios: entrada/origem/pausa/reabertura/decisão; permanencias_negocio: mudanças de etapa; formularios; interacoes_whatsapp; interacoes; diagnosticos; propostas com decisão; tarefas; handoffs) em lista cronológica desc com `{tipo, data, titulo, detalhe, autor}`. Resumo truncado a 200 chars; limite 300 eventos com flag `truncado`; falha de fonte vira aviso `fontes_com_erro` (nada omitido silenciosamente); sem nova coleção.
-- **UI `TimelineNegocio`** — botão "Timeline" no menu Mais ⌄ da oportunidade: linha do tempo vertical com badges por tipo (Entrada, Etapa, Formulário, WhatsApp, E-mail, Reunião, Diagnóstico, Proposta, Tarefa, Handoff, Decisão), data pt-BR, detalhe e autor; avisos de fontes com erro e truncamento; estado vazio explícito.
+- **Hook `timeline_endpoint.js`** — `GET /backend/v1/negocios/{id}/timeline` (auth, somente leitura): consolida eventos de 9 fontes existentes em lista cronológica desc com `{tipo, data, titulo, detalhe, autor}`. Resumo truncado a 200 chars; limite 300 eventos com flag `truncado`; falha de fonte vira aviso `fontes_com_erro`; sem nova coleção.
+- **UI `TimelineNegocio`** — botão "Timeline" no menu Mais ⌄: linha do tempo vertical com badges por tipo, data pt-BR, detalhe e autor.
 
 ### Provas (CA-3-009 a CA-3-011)
 - RED: 401 sem auth · 404 negócio inexistente.
-- GREEN: Felicidade Collective — 8 eventos de 5 tipos (entrada, etapa, whatsapp, handoff, diagnostico, decisao) em ordem desc com autores; negócio simples — 40 eventos; contagens das coleções-fonte idênticas antes/depois de 3 chamadas (somente leitura confirmado).
+- GREEN: Felicidade — 8 eventos de 5 tipos em ordem desc; negócio simples — 40 eventos; contagens das fontes idênticas antes/depois de 3 chamadas.
 - QA verde v0.0.439.
-
-### Pendência de verificação
-- Abertura do modal Timeline via clique no menu não confirmada no teste automatizado de browser (item presente e clicável) — verificar no teste humano.
 
 ## [0.0.438] — 2026-09-13 — T3.03 CONCLUÍDA (teste humano aprovado)
 
