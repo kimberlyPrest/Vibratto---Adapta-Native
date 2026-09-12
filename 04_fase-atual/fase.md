@@ -87,7 +87,7 @@ Ao menos um caso percorre o fluxo integrado; oportunidades ativas da amostra tê
 
 # Fase 3 — Conexão, Qualificação e Conversão (em execução)
 
-**Status:** EM EXECUÇÃO — 4 tasks concluídas — aberta em 2026-09-12
+**Status:** EM EXECUÇÃO — 7 tasks concluídas ou em portão — aberta em 2026-09-12
 **Base:** documento "Onda 3 — Conexão, Qualificação e Conversão" da cliente (confirmado COMPLEMENTAR às melhorias existentes — nada da Fase 1/2 é descartado).
 **Resultado esperado:** o CRM deixa de apenas organizar a operação comercial e passa a capturar, centralizar e transformar interações em oportunidades e propostas.
 
@@ -99,6 +99,9 @@ Ao menos um caso percorre o fluxo integrado; oportunidades ativas da amostra tê
 | 2 | T3.02 | Formulários inteligentes por solução (BPO/CFO/Consultoria) conectados ao CRM, com atualização automática da oportunidade | Engenharia de produto | SPEC-3-001 | CA-3-002 formulário público por solução com respostas vinculadas; CA-3-003 oportunidade atualizada automaticamente; CA-3-004 consentimento LGPD; CA-3-005 delete bloqueado e auditoria | RED/GREEN por API + caso real de formulário respondido | evidencias/spec-3-001/ + artifacts/T302_evidencia_ca3002.md | T3.01 concluída | ✅ Concluída — 2026-09-12 (teste humano aprovado 23:55 — "funcionou"; v0.0.418) |
 | 2b | T3.02b | Ficha de preparação da proposta (consolidação interna antes da proposta) | Engenharia de produto | SPEC-3-001b | a definir na SPEC-3-001b | a definir | evidencias/spec-3-001b/ | T3.02 concluída | ✅ Concluída — 2026-09-13 00:16 (teste humano aprovado — "TASK VALIDADA"; v0.0.434) |
 | 3 | T3.03 | WhatsApp P1 — registro estruturado de interações WhatsApp na oportunidade (coleção append-only, endpoint POST/GET, UI no menu Mais ⌄, bloco WhatsApp na consulta 360º) | Engenharia de produto | SPEC-3-002 | CA-3-006 interação estruturada vinculada a negócio/contato; CA-3-007 próxima ação atualiza a oportunidade sem quebrar guard T2.18; CA-3-008 delete bloqueado + auditoria | RED/GREEN por API + caso real na consulta 360º | evidencias/spec-3-002/ | T3.02b concluída | ✅ Concluída — 2026-09-13 08:10 (teste humano aprovado — "teste realizado e todos passaram"; v0.0.438) |
+| 4 | T3.04 | Timeline 360º — consolidação cronológica server-side de 9 fontes existentes (endpoint somente leitura) + UI com badges por tipo | Engenharia de produto | SPEC-3-003 | CA-3-009 consolidação multi-fonte ordenada; CA-3-010 leitura explícita; CA-3-011 somente leitura | RED/GREEN por API + caso real na UI | evidencias/spec-3-003/ | T3.03 concluída | ✅ Concluída — 2026-09-13 08:55 (teste humano delegado aprovado com print; v0.0.440) |
+| 5 | T3.05 | E-mail P1 — registro estruturado de interações e-mail (coleção append-only com assunto, endpoints POST/GET, UI no menu Mais ⌄, bloco E-mail na consulta 360º) | Engenharia de produto | SPEC-3-004 | CA-3-012 interação estruturada; CA-3-013 próxima ação sem quebrar guard T2.18; CA-3-014 delete bloqueado + auditoria | RED/GREEN por API + caso real na consulta 360º | evidencias/spec-3-004/ | T3.04 concluída | ✅ Concluída — 2026-09-13 09:05 (teste humano delegado aprovado com prints; v0.0.442) |
+| 6 | T3.06 | Automações Se/Então — cron diário gera follow-up de proposta (3/7 dias) e alertas de saúde (sem próxima ação, parada) em log append-only idempotente + seção "Automações de hoje" no painel Operacional | Engenharia de produto | SPEC-3-005 | CA-3-015 execuções corretas e idempotentes; CA-3-016 alertas de saúde; CA-3-017 somente leitura comercial | GREEN por API + regressão comercial + UI no painel | evidencias/spec-3-005/ | T3.05 concluída | ⏳ Aguardando teste humano — implementada (v0.0.447, QA verde) |
 
 ## Correções autorizadas durante a T3.01 (registradas no changelog 0.0.380)
 
