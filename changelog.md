@@ -1,5 +1,18 @@
 # Changelog — CRM Vibratto
 
+## [0.0.434] — 2026-09-13 — T3.02b implementada (aguardando teste humano)
+
+### Adicionado (T3.02b — ficha de preparação da proposta, doc Onda 3 §10)
+- **Coleção `fichas_proposta`** (migration 0136): negócio (relation), versão, 7 campos editáveis do time (solução recomendada, escopo sugerido, frequência, senioridade, entregáveis, premissas de precificação, pontos a confirmar), motivo de atualização. Delete bloqueado (deleteRule null).
+- **API rule do update** (migration 0137): `@request.body.motivo_atualizacao != ''` — PATCH sem motivo bloqueado.
+- **Hook `ficha_proposta_rules.js`**: motivo obrigatório (mín. 10 caracteres) no create e update.
+- **Endpoint `GET /backend/v1/fichas/{negocioId}`**: consolida em uma leitura — oportunidade (contato/empresa/serviço/origem/próxima ação), qualificação (percentual + respostas legíveis), diagnóstico atual, formulário respondido (resumo) e ficha editável mais recente + **completude explícita** (o que falta antes da proposta, nada escondido).
+- **UI `FichaPropostaNegocio`**: botão "Ficha da proposta" no menu Mais ⌄; blocos de consolidação + editor da leitura do time com versionamento (v1 → v2 → ...) e motivo obrigatório.
+- Provas API: 401 sem auth · 404 negócio inexistente · 200 consolidação · 400 sem motivo · 200 create/update com motivo · bloqueio de update sem motivo · 403 delete. Evidência: artifacts/T302b_evidencia.md.
+
+### Lições (candidata a AP)
+- JSVM hooks (request e model) não expõem before confiável no update neste runtime (v2–v7 falharam) — validação de update resolvida com API rule da coleção. Gramática PB: sem ternário, sem length().
+
 ## [0.0.418] — 2026-09-13 — T3.02 CONCLUÍDA (teste humano aprovado)
 
 ### Adicionado (T3.02 — formulários inteligentes, SPEC-3-001)
