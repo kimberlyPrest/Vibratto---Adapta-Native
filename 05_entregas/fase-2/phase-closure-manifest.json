@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "adapta-phase-closure/v1",
+  "phase": 2,
+  "closedAt": "2026-09-28T20:29:01.000Z",
+  "activeDigest": "92a820c5789590fffe72e51843bc25d78f9455b5d511d7564be6262597e1a583",
+  "files": [
+    {
+      "relative": "fase.md",
+      "sha256": "911f79c77fa634be3c0bdbe71c07df6adefc587ec39cb62e2c43e1955b2f2843"
+    },
+    {
+      "relative": "specs/SPEC-2-000-remediacao-debitos-fase-1.md",
+      "sha256": "4f8853e78ebfac3a1ec2fc3da906e68c65f94bab646c3453fb01954f8e5221ed"
+    },
+    {
+      "relative": "specs/SPEC-2-001-seguranca-credenciais-e-build-reproduzivel.md",
+      "sha256": "2fe49646743d623370310f23953c7266c61fffb8e4801d5b914c6ecf4e68eb5d"
+    },
+    {
+      "relative": "specs/SPEC-2-002-qualificacao-comercial-estruturada.md",
+      "sha256": "ba468ca0b4a5b6289e1a52a19a3580f3e2a3733f95278217a7349038d63a5bbc"
+    },
+    {
+      "relative": "specs/SPEC-2-003-diagnostico-comercial-e-proximo-passo.md",
+      "sha256": "aaecabb571ce3994c675701373d09f7ecd5c9016d59565bc32b660941b509bad"
+    },
+    {
+      "relative": "specs/SPEC-2-004-proposta-comercial-versionada.md",
+      "sha256": "6404957fb222a8bca0be92316ac0e8a2c9915aa2a6bef5a2e098a9f2607954f7"
+    },
+    {
+      "relative": "specs/SPEC-2-005-tarefas-slas-e-filas-de-excecao.md",
+      "sha256": "c493f2dd7b1433bcb8985572b68573149d6e3bac3852533ec4ed1b51809cf647"
+    },
+    {
+      "relative": "specs/SPEC-2-006-handoff-de-ganho-e-pendencias.md",
+      "sha256": "13c8ef491e03d4756cc08cb7a40da8ff3a4cb11427a72c708eccb85595fa1eaa"
+    },
+    {
+      "relative": "specs/SPEC-2-007-dashboard-baseline-e-dicionario-de-metricas.md",
+      "sha256": "30950564002aca4b0a3b10ddbdaaf7039f5ae2c9d95d2d73aff6f45bc248469b"
+    }
+  ],
+  "manifestDrift": [
+    {
+      "path": "04_fase-atual/fase.md",
+      "status": "alterado-desde-manifesto",
+      "manifestSha256": "7144e12125ccbfca3e876ef8ba2d6fac3de20e96c044ee3037f40cb0af4aaba7",
+      "currentSha256": "911f79c77fa634be3c0bdbe71c07df6adefc587ec39cb62e2c43e1955b2f2843"
+    }
+  ]
+}
