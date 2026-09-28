@@ -6,7 +6,7 @@
     "adapta": "0.9.3",
     "adaptaCliente": "0.9.3"
   },
-  "generatedAt": "2026-09-28T20:30:35.000Z",
+  "generatedAt": "2026-09-28T20:52:10.000Z",
   "files": [
     {
       "path": "04_fase-atual/fase.md",
@@ -70,12 +70,12 @@
     },
     {
       "path": "04_fase-atual/specs/SPEC-3-013-rbac-perfis-permissoes-gestao-usuarios.md",
-      "sha256": "144405836a424963f4ba1914bf13188f4508e04776b63fabbcb1c6bf9c9436ac",
+      "sha256": "7a86779c5f88864668e32c23b4e8d408a8a0272b068d6b010947779e2d5756d5",
       "classification": "spec-fase-atual"
     },
     {
       "path": "04_fase-atual/specs/SPEC-3-014-via-estagio-1-whatsapp-gemini.md",
-      "sha256": "a14e7e11edd42067d47dd8dc391346974fece817ed05d5f864f85dd4ba52c2e3",
+      "sha256": "e4b71c3de66bf644589098e9e4ba012fe5eef42eabdbbd98eda0dca0c4f55aa6",
       "classification": "spec-fase-atual"
     },
     {
