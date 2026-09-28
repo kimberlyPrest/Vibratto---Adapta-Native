@@ -2,10 +2,9 @@
 
 **Status:** Fase 3 EM EXECUÇÃO — 13/N tasks concluídas
 **Cliente:** Vibratto Assessoria Empresarial Ltda.
-**Task ativa:** nenhuma (T3.09 concluída)
-**Última task concluída:** T3.10 — painel por papel + metas + comparativo (2026-09-13 12:17)
-**Task no portão:** nenhuma — T3.12 concluída (teste humano executado)
-**Próxima leva:** fila de trabalho pessoal + comentários/menções → painel por papel + metas → relatórios agendados → perfis/visibilidade/backup → V.ia estágio 1 → catálogo (sequência acordada do backlog Etapa 3)
+**Task ativa:** nenhuma
+**Última task concluída:** T3.12 — motor de rotinas + exceções (teste humano executado)
+**Próxima leva:** T3.13 — RBAC (SPEC-3-013 publicada) → T3.14 — V.ia estágio 1 (SPEC-3-014 publicada); depois: relatórios salvos/agendados, catálogo de serviços e backup com teste de restauração (backlog Etapa 3)
 **Preview:** https://tela-de-login-crm-a400a--preview.goskip.app — formulário público em /entrada
 **Versão atual:** v0.0.504 (QA verde)
 **Produção:** não publicada (decisão da cliente)
@@ -25,21 +24,24 @@
 | 8 | T3.08 — fila de trabalho pessoal + comentários/menções | SPEC-3-007 | ✅ Concluída — 2026-09-13 11:23 |
 | 9 | T3.09 — harmonização visual dos cards | SPEC-3-008 | ✅ Concluída — 2026-09-13 11:38 |
 | 10 | T3.10 — painel por papel + metas + comparativo | SPEC-3-010 | ✅ Concluída — 2026-09-13 12:17 |
-| 11+ | relatórios, perfis, V.ia, catálogo | a definir SPEC a SPEC | Planejadas |
+| 11 | T3.11 — Ficha Operacional do Cliente (Leva A) | SPEC-3-011 | ✅ Concluída — teste humano executado |
+| 12 | T3.12 — Motor de Rotinas + Exceções (Leva B) | SPEC-3-012 | ✅ Concluída — teste humano executado |
+| 12b | T3.13 — RBAC: perfis, permissões e gestão de usuários (Rodada 1) | SPEC-3-013 | 📋 Publicada — aguardando execução |
+| 13 | T3.14 — V.ia estágio 1: WhatsApp (API oficial) + Gemini (Rodada 2) | SPEC-3-014 | 📋 Publicada — aguardando execução |
 
-## Evidência da T3.07 (concluída)
+## Governança (2026-09-28)
 
-- **Formulário público `/entrada`** (90–120s, mobile-first, 3 blocos): identificação + qualificação + roteamento por sintoma; score 0–92 server-side (quente ≥60 / morno 35–59 / frio <35); UTM + origem declarada; LGPD duplo (consentimento obrigatório + opt-in opcional); honeypot + tempo mínimo 20s + rate limit por IP/hora.
-- **Vincular**: cria contato (dedup por e-mail) + oportunidade saudável sem tocar campos comerciais; re-vinculação bloqueada.
-- Provas: RED 6 / GREEN 5 por API (evidencias/spec-3-006/) + revalidação do zero na conclusão (401 sem auth, 400 sem consentimento/dor). Teste humano da CEO: UI completa validada no celular (envio, LGPD, campos, confirmação). QA verde v0.0.448–0.0.451.
-
-## Limitações
-
-Dedup por e-mail provado por API e no teste humano. Instagram, agenda, pós-venda, dashboard executivo e IA nas próximas levás. Publicação em produção aguarda decisão da cliente.
+- Fase 2 (40/40, 8 SPECs) arquivada em `05_entregas/fase-2/` com phase-closure-manifest; `04_fase-atual/` contém somente a Fase 3.
+- SPEC-3-013 e SPEC-3-014 publicadas conforme o documento da CEO de 23/09 e a direção da consultora (RBAC primeiro; integrações de canais da seção 9 em spec própria).
+- `via_config` nasce inativo — ativação real reservada à consultora/cliente após segredos (GEMINI_API_KEY, WHATSAPP_TOKEN, WHATSAPP_APP_SECRET) e número comercial configurados.
 
 ## Decisões da CEO (13/09)
 
 - **D6 — notificação de lead quente**: inicialmente somente a Deniane (CEO).
 - **D8 — agenda na tela final do formulário**: Calendly; fica para depois (fora do recorte atual).
-- **D2 — relato livre**: opcional, com mínimo de 30 caracteres se preenchido (decisão da CEO, 13/09 — rejeitado o mínimo de 120 chars por custo de conversão; revisável com dado real de uso). **IMPLEMENTADA E TESTADA** (v0.0.455–0.0.459; teste humano aprovado 10:47): validação server-side + contador no UI.
-- **D5 — retenção de leads que não fecharam**: 24 meses da coleta ou do último contato, o que for mais recente; eliminação dos dados de identificação ao fim do prazo (decisão da CEO, 13/09). **IMPLEMENTADA E TESTADA** (v0.0.456–0.0.459; teste humano aprovado 10:47): cron diário 03:00 + execução manual admin (`POST /backend/v1/entrada/retencao/executar`); provada com fixture retroativa (removidos:1, leads reais intactos).
+- **D2 — relato livre**: opcional, com mínimo de 30 caracteres se preenchido (decisão da CEO, 13/09 — rejeitado o mínimo de 120 chars por custo de conversão; revisável com dado real de uso). **IMPLEMENTADA E TESTADA** (v0.0.455–0.0.459; teste humano aprovado 10:47).
+- **D5 — retenção de leads que não fecharam**: 24 meses da coleta ou do último contato, o que for mais recente; eliminação dos dados de identificação ao fim do prazo (decisão da CEO, 13/09). **IMPLEMENTADA E TESTADA** (v0.0.456–0.0.459; teste humano aprovado 10:47).
+
+## Limitações
+
+Dedup por e-mail provado por API e no teste humano. Instagram, agenda, pós-venda, dashboard executivo e IA nas próximas levás. Publicação em produção aguarda decisão da cliente.

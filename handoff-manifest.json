@@ -1,57 +1,87 @@
 {
   "schemaVersion": "adapta-cliente-handoff/v1",
-  "phase": 2,
+  "phase": 3,
   "versions": {
     "package": "0.9.3",
     "adapta": "0.9.3",
     "adaptaCliente": "0.9.3"
   },
-  "generatedAt": "2026-09-10T16:29:13.838Z",
+  "generatedAt": "2026-09-28T20:30:35.000Z",
   "files": [
     {
       "path": "04_fase-atual/fase.md",
-      "sha256": "7144e12125ccbfca3e876ef8ba2d6fac3de20e96c044ee3037f40cb0af4aaba7",
+      "sha256": "c94a11ac53c705b5462970033da0489f47e669290d8920711013558d1e36505c",
       "classification": "fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-000-remediacao-debitos-fase-1.md",
-      "sha256": "4f8853e78ebfac3a1ec2fc3da906e68c65f94bab646c3453fb01954f8e5221ed",
+      "path": "04_fase-atual/specs/SPEC-3-001-formularios-inteligentes.md",
+      "sha256": "22e62f6fa0733dc1562ebfb21ed21e99de62debf813f89bd5727aae607c52500",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-001-seguranca-credenciais-e-build-reproduzivel.md",
-      "sha256": "2fe49646743d623370310f23953c7266c61fffb8e4801d5b914c6ecf4e68eb5d",
+      "path": "04_fase-atual/specs/SPEC-3-002-whatsapp-p1.md",
+      "sha256": "13d9740d5fe7baaf1f0b599cf05a20f873cf4cb2a870378f937e47614c7bafc3",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-002-qualificacao-comercial-estruturada.md",
-      "sha256": "ba468ca0b4a5b6289e1a52a19a3580f3e2a3733f95278217a7349038d63a5bbc",
+      "path": "04_fase-atual/specs/SPEC-3-003-timeline-360.md",
+      "sha256": "da4a7a35cac1ac7a3a3972df0b0732e4a77196f356c15e27d251572b99940a42",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-003-diagnostico-comercial-e-proximo-passo.md",
-      "sha256": "aaecabb571ce3994c675701373d09f7ecd5c9016d59565bc32b660941b509bad",
+      "path": "04_fase-atual/specs/SPEC-3-004-email-p1.md",
+      "sha256": "c72f24939bf679f67c7d3774a95e1d62d9ef0f4a8afc7064921815b5c4a827b6",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-004-proposta-comercial-versionada.md",
-      "sha256": "6404957fb222a8bca0be92316ac0e8a2c9915aa2a6bef5a2e098a9f2607954f7",
+      "path": "04_fase-atual/specs/SPEC-3-005-automacoes-se-entao.md",
+      "sha256": "659297a4b851efac60154fb64dcf8de8c792d65dd41b6c3821cb3eb0c80d8b55",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-005-tarefas-slas-e-filas-de-excecao.md",
-      "sha256": "c493f2dd7b1433bcb8985572b68573149d6e3bac3852533ec4ed1b51809cf647",
+      "path": "04_fase-atual/specs/SPEC-3-006-formulario-entrada-porta-1.md",
+      "sha256": "834d0839ba462ae728f5eb645a772a6d5aad70eb10b8b4f1bd47567f6fa174e2",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-006-handoff-de-ganho-e-pendencias.md",
-      "sha256": "13c8ef491e03d4756cc08cb7a40da8ff3a4cb11427a72c708eccb85595fa1eaa",
+      "path": "04_fase-atual/specs/SPEC-3-007-fila-trabalho-comentarios.md",
+      "sha256": "84466ba8de72f637d698fc542e4db2779e6e8e3195916446197eabda2c6ada79",
       "classification": "spec-fase-atual"
     },
     {
-      "path": "04_fase-atual/specs/SPEC-2-007-dashboard-baseline-e-dicionario-de-metricas.md",
-      "sha256": "30950564002aca4b0a3b10ddbdaaf7039f5ae2c9d95d2d73aff6f45bc248469b",
+      "path": "04_fase-atual/specs/SPEC-3-008-harmonizacao-visual-cards.md",
+      "sha256": "d9c9f687c14f089309cda6b294788be053e3a18fe4b52bd8dcce8a992b151499",
       "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-3-010-painel-papel-metas-comparativo.md",
+      "sha256": "a93fa26c6d313cdb87688bfcae1ea20e659e93e2ae01fb63a18d6e0eeb038af6",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-3-011-ficha-operacional-cliente.md",
+      "sha256": "3d82efc614738cd2dd2c503be9b73ad64f86f9c686e349a1085ed239a4ac1464",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-3-012-motor-rotinas-excecoes.md",
+      "sha256": "5140f87ed675b448a740de8a4647be98630e647dc2d47e565483c9d2e4c16300",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-3-013-rbac-perfis-permissoes-gestao-usuarios.md",
+      "sha256": "144405836a424963f4ba1914bf13188f4508e04776b63fabbcb1c6bf9c9436ac",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/specs/SPEC-3-014-via-estagio-1-whatsapp-gemini.md",
+      "sha256": "a14e7e11edd42067d47dd8dc391346974fece817ed05d5f864f85dd4ba52c2e3",
+      "classification": "spec-fase-atual"
+    },
+    {
+      "path": "04_fase-atual/backlog-etapa3-requisitos-complementares.md",
+      "sha256": "ce4e396e5d15eaccf3068dbde9954c4a1528b8856ae473ccacab445a1206b241",
+      "classification": "fase-atual-anexo"
     }
   ]
 }
